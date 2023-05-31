@@ -1,0 +1,9 @@
+/* 
+  Localizable.strings
+  SwiftUIClima
+
+  Created by Antonio Casto on 31/05/23.
+  
+*/
+
+"welcome_message" = "Welcome to the app!";
