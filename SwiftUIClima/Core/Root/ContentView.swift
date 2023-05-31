@@ -9,38 +9,32 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @StateObject private var viewModel = ContentViewModel()
+    @AppStorage(AppLocale.preferenceKey) private var appLocale: AppLocale?
     
     var body: some View {
         
         VStack {
             
-            if let locale = viewModel.locale {
-                VStack {
-                    Text(locale)
-                    Text(ContentView.welcomeMessage)
-                }
-                .padding()
-                .environment(\.locale, .init(identifier: locale))
-            } else {
-                VStack {
-                    Text("No language set")
-                    Text(ContentView.welcomeMessage)
-                }
-                .padding()
+            VStack {
+                Text(appLocale?.rawValue ?? "No Language Set")
+                Text(ContentView.welcomeMessage)
             }
+            .padding()
+            .environment(\.locale, .init(identifier: appLocale?.rawValue ?? ""))
+            .padding()
+            
             
             HStack {
                 Button("EN") {
-                    viewModel.setLocale(with: .en)
+                    appLocale = .en
                 }
                 
                 Button("IT") {
-                    viewModel.setLocale(with: .it)
+                    appLocale = .it
                 }
                 
                 Button("DEFAULT") {
-                    viewModel.setLocale(with: .none)
+                    appLocale = .none
                 }
             }
         }

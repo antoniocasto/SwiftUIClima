@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B03475FC2A27B6D60030286B /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03475FB2A27B6D60030286B /* LocalizationManager.swift */; };
-		B03476002A27B9170030286B /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03475FF2A27B9170030286B /* ContentViewModel.swift */; };
+		B00782A12A27D11F0037246D /* AppLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00782A02A27D11F0037246D /* AppLocale.swift */; };
 		B076B3572A27AD7D00FAB35C /* SwiftUIClimaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076B3562A27AD7D00FAB35C /* SwiftUIClimaApp.swift */; };
 		B076B3592A27AD7D00FAB35C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076B3582A27AD7D00FAB35C /* ContentView.swift */; };
 		B076B35B2A27AD7E00FAB35C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B076B35A2A27AD7E00FAB35C /* Assets.xcassets */; };
@@ -17,8 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B03475FB2A27B6D60030286B /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
-		B03475FF2A27B9170030286B /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		B00782A02A27D11F0037246D /* AppLocale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocale.swift; sourceTree = "<group>"; };
 		B076B3532A27AD7D00FAB35C /* SwiftUIClima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIClima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B076B3562A27AD7D00FAB35C /* SwiftUIClimaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIClimaApp.swift; sourceTree = "<group>"; };
 		B076B3582A27AD7D00FAB35C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,8 +64,7 @@
 		B03475F62A27B61F0030286B /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				B03475FE2A27B90B0030286B /* View */,
-				B03475FD2A27B9080030286B /* ViewModel */,
+				B076B3582A27AD7D00FAB35C /* ContentView.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -75,6 +72,7 @@
 		B03475F72A27B62B0030286B /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B00782A02A27D11F0037246D /* AppLocale.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -82,25 +80,8 @@
 		B03475FA2A27B6AB0030286B /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				B03475FB2A27B6D60030286B /* LocalizationManager.swift */,
 			);
 			path = Manager;
-			sourceTree = "<group>";
-		};
-		B03475FD2A27B9080030286B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				B03475FF2A27B9170030286B /* ContentViewModel.swift */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		B03475FE2A27B90B0030286B /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B076B3582A27AD7D00FAB35C /* ContentView.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		B076B34A2A27AD7D00FAB35C = {
@@ -212,9 +193,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B03476002A27B9170030286B /* ContentViewModel.swift in Sources */,
+				B00782A12A27D11F0037246D /* AppLocale.swift in Sources */,
 				B076B3592A27AD7D00FAB35C /* ContentView.swift in Sources */,
-				B03475FC2A27B6D60030286B /* LocalizationManager.swift in Sources */,
 				B076B3572A27AD7D00FAB35C /* SwiftUIClimaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
