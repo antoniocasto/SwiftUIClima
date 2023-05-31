@@ -37,6 +37,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B00782A22A27D4D80037246D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		B03475F32A27B51C0030286B /* Resource */ = {
 			isa = PBXGroup;
 			children = (
@@ -77,11 +84,11 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		B03475FA2A27B6AB0030286B /* Manager */ = {
+		B03475FA2A27B6AB0030286B /* Service */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			path = Manager;
+			path = Service;
 			sourceTree = "<group>";
 		};
 		B076B34A2A27AD7D00FAB35C = {
@@ -104,10 +111,11 @@
 			isa = PBXGroup;
 			children = (
 				B03475F42A27B60B0030286B /* App */,
+				B00782A22A27D4D80037246D /* Components */,
 				B03475F52A27B6160030286B /* Core */,
-				B03475FA2A27B6AB0030286B /* Manager */,
 				B03475F72A27B62B0030286B /* Model */,
 				B03475F32A27B51C0030286B /* Resource */,
+				B03475FA2A27B6AB0030286B /* Service */,
 				B076B35A2A27AD7E00FAB35C /* Assets.xcassets */,
 				B076B35C2A27AD7E00FAB35C /* Preview Content */,
 			);
