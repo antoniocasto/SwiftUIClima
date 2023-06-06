@@ -18,3 +18,8 @@
 "AppLocale.enLocale" = "Inglese";
 "AppLocale.itLocale" = "Italiano";
 "AppLocale.systemLocale" = "Sistema";
+
+/* ContentView */
+"ContentView.locations" = "Luoghi";
+"ContentView.weather" = "Meteo";
+"ContentView.settings" = "Impostazioni";

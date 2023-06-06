@@ -14,41 +14,22 @@ struct ContentView: View {
     
     var body: some View {
         
-        VStack(spacing: 16) {
+        TabView {
             
-            VStack {
-                Text(appLocale == .system ? "No Language Set" : appLocale.rawValue)
-                Text(ContentView.welcomeMessage)
-            }
-            .padding()            
+            LocationsView()
+                .tabItem {
+                    Label(ContentView.locations, systemImage: "heart")
+                }
             
-            HStack {
-                Button("EN") {
-                    appLocale = .en
+            WeatherView()
+                .tabItem {
+                    Label(ContentView.weather, systemImage: "cloud.sun")
                 }
-                
-                Button("IT") {
-                    appLocale = .it
-                }
-                
-                Button("System") {
-                    appLocale = .system
-                }
-            }
             
-            HStack {
-                Button("Dark") {
-                    appTheme = .dark
+            SettingsView()
+                .tabItem {
+                    Label(ContentView.settings, systemImage: "gear")
                 }
-                
-                Button("Light") {
-                    appTheme = .light
-                }
-                
-                Button("System") {
-                    appTheme = .system
-                }
-            }
             
         }
         .preferredLocale(appLocale)
@@ -64,5 +45,8 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 extension ContentView {
-    static let welcomeMessage = LocalizedStringKey("welcome_message")
+    
+    static let locations = LocalizedStringKey("ContentView.locations")
+    static let weather = LocalizedStringKey("ContentView.weather")
+    static let settings = LocalizedStringKey("ContentView.settings")
 }

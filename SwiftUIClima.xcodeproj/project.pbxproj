@@ -34,6 +34,9 @@
 		B0D2E0FA2A27B9EE002AC6D9 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B0D2E0FC2A27B9EE002AC6D9 /* Localizable.strings */; };
 		B0D6AE0B2A2F630E00660195 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D6AE0A2A2F630E00660195 /* ViewExtension.swift */; };
 		B0D6AE0D2A2F68C300660195 /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D6AE0C2A2F68C300660195 /* AppTheme.swift */; };
+		B0D6AE152A2F764200660195 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D6AE142A2F764200660195 /* LocationsView.swift */; };
+		B0D6AE172A2F764B00660195 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D6AE162A2F764B00660195 /* SettingsView.swift */; };
+		B0D6AE192A2F765400660195 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D6AE182A2F765400660195 /* WeatherView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +68,9 @@
 		B0D2E0FD2A27B9F2002AC6D9 /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B0D6AE0A2A2F630E00660195 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		B0D6AE0C2A2F68C300660195 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		B0D6AE142A2F764200660195 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
+		B0D6AE162A2F764B00660195 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B0D6AE182A2F765400660195 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +112,10 @@
 		B03475F52A27B6160030286B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B0D6AE112A2F739000660195 /* Locations */,
 				B03475F62A27B61F0030286B /* Root */,
+				B0D6AE132A2F73A500660195 /* Settings */,
+				B0D6AE122A2F739B00660195 /* Weather */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -208,6 +217,30 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		B0D6AE112A2F739000660195 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				B0D6AE142A2F764200660195 /* LocationsView.swift */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
+		B0D6AE122A2F739B00660195 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				B0D6AE182A2F765400660195 /* WeatherView.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		B0D6AE132A2F73A500660195 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B0D6AE162A2F764B00660195 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -303,11 +336,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0D6AE172A2F764B00660195 /* SettingsView.swift in Sources */,
 				B00782A12A27D11F0037246D /* AppLocale.swift in Sources */,
 				B076B3592A27AD7D00FAB35C /* ContentView.swift in Sources */,
 				B0D6AE0B2A2F630E00660195 /* ViewExtension.swift in Sources */,
+				B0D6AE152A2F764200660195 /* LocationsView.swift in Sources */,
 				B076B3572A27AD7D00FAB35C /* SwiftUIClimaApp.swift in Sources */,
 				B0D6AE0D2A2F68C300660195 /* AppTheme.swift in Sources */,
+				B0D6AE192A2F765400660195 /* WeatherView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

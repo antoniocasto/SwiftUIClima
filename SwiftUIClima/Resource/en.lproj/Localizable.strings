@@ -6,9 +6,6 @@
   
 */
 
-/* DEBUG */
-"welcome_message" = "Welcome!";
-
 /* AppTheme */
 "AppTheme.systemTheme" = "System";
 "AppTheme.darkTheme" = "Dark";
@@ -18,3 +15,8 @@
 "AppLocale.enLocale" = "English";
 "AppLocale.itLocale" = "Italian";
 "AppLocale.systemLocale" = "System";
+
+/* ContentView */
+"ContentView.locations" = "Locations";
+"ContentView.weather" = "Weather";
+"ContentView.settings" = "Settings";
