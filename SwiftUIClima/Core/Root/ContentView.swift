@@ -7,8 +7,11 @@
 
 import SwiftUI
 
+/// This view contains the navigation for the app.
+/// The navigation is based on TabView.
 struct ContentView: View {
     
+    // UserDefaults properties for user preferences
     @AppStorage(AppLocale.preferenceKey) private var appLocale: AppLocale = .system
     @AppStorage(AppTheme.preferenceKey) private var appTheme: AppTheme = .system
     

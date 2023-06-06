@@ -7,14 +7,17 @@
 
 import SwiftUI
 
+/// Enum used to select the app theme.
 enum AppTheme: Int, CaseIterable {
     
     case light
     case dark
     case system
     
+    // Used for UserDefaults
     static let preferenceKey = "AppTheme"
     
+    // Returns the actual ColorScheme to set the proper theme
     var theme: ColorScheme? {
         switch self {
         case .system:
@@ -26,6 +29,7 @@ enum AppTheme: Int, CaseIterable {
         }
     }
     
+    // Theme full name
     var themeName: LocalizedStringKey {
         switch self {
         case .system:

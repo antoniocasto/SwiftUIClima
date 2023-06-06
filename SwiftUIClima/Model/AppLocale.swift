@@ -7,14 +7,17 @@
 
 import SwiftUI
 
+/// Enum used to select the app language.
 enum AppLocale: String, CaseIterable {
     
     case en = "en"
     case it = "it"
     case system = ""
     
+    // Used for UserDefaults
     static let preferenceKey = "AppLocale"
     
+    // Full name of the language
     var name: LocalizedStringKey {
         switch self {
         case .en:
