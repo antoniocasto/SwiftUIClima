@@ -35,6 +35,8 @@ struct ContentView: View {
                 }
             }
         }
+        .setLocale(to: appLocale)
+        
     }
 }
 
