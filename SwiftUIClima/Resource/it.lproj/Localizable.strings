@@ -6,4 +6,15 @@
   
 */
 
+/* DEBUG */
 "welcome_message" = "Benvenuto!";
+
+/* AppTheme */
+"AppTheme.systemTheme" = "Sistema";
+"AppTheme.darkTheme" = "Scuro";
+"AppTheme.lightTheme" = "Chiaro";
+
+/* AppLocale */
+"AppLocale.enLocale" = "Inglese";
+"AppLocale.itLocale" = "Italiano";
+"AppLocale.systemLocale" = "Sistema";

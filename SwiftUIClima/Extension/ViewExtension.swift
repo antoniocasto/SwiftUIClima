@@ -26,7 +26,7 @@ struct ViewLocale: ViewModifier {
 
 extension View {
     
-    func setLocale(to locale: AppLocale) -> some View {
+    func preferredLocale(_ locale: AppLocale) -> some View {
         modifier(ViewLocale(locale: locale))
     }
     

@@ -10,10 +10,11 @@ import SwiftUI
 struct ContentView: View {
     
     @AppStorage(AppLocale.preferenceKey) private var appLocale: AppLocale = .system
+    @AppStorage(AppTheme.preferenceKey) private var appTheme: AppTheme = .system
     
     var body: some View {
         
-        VStack {
+        VStack(spacing: 16) {
             
             VStack {
                 Text(appLocale == .system ? "No Language Set" : appLocale.rawValue)
@@ -30,12 +31,28 @@ struct ContentView: View {
                     appLocale = .it
                 }
                 
-                Button("DEFAULT") {
+                Button("System") {
                     appLocale = .system
                 }
             }
+            
+            HStack {
+                Button("Dark") {
+                    appTheme = .dark
+                }
+                
+                Button("Light") {
+                    appTheme = .light
+                }
+                
+                Button("System") {
+                    appTheme = .system
+                }
+            }
+            
         }
-        .setLocale(to: appLocale)
+        .preferredLocale(appLocale)
+        .preferredColorScheme(appTheme.theme)
         
     }
 }
