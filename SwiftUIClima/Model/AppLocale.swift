@@ -11,6 +11,7 @@ enum AppLocale: String {
     
     case en = "en"
     case it = "it"
+    case system = ""
     
     static let preferenceKey = "AppLocale"
 }

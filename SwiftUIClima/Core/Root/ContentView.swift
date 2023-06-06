@@ -9,20 +9,17 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @AppStorage(AppLocale.preferenceKey) private var appLocale: AppLocale?
+    @AppStorage(AppLocale.preferenceKey) private var appLocale: AppLocale = .system
     
     var body: some View {
         
         VStack {
             
             VStack {
-                Text(appLocale?.rawValue ?? "No Language Set")
+                Text(appLocale == .system ? "No Language Set" : appLocale.rawValue)
                 Text(ContentView.welcomeMessage)
             }
-            .padding()
-            .environment(\.locale, .init(identifier: appLocale?.rawValue ?? ""))
-            .padding()
-            
+            .padding()            
             
             HStack {
                 Button("EN") {
@@ -34,7 +31,7 @@ struct ContentView: View {
                 }
                 
                 Button("DEFAULT") {
-                    appLocale = .none
+                    appLocale = .system
                 }
             }
         }
