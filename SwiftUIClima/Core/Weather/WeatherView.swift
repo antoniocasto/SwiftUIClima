@@ -8,8 +8,19 @@
 import SwiftUI
 
 struct WeatherView: View {
+    
+    @StateObject var locationManager = LocationManager.shared
+    
     var body: some View {
-        Text("Weather View")
+        Group {
+            if let loc = locationManager.userLocation {
+                Text("lat: \(loc.coordinate.latitude)")
+            } else {
+                Text("Waiting for user location")
+                    .foregroundColor(.red)
+            }
+        }
+
     }
 }
 

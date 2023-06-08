@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  SwiftUIClima
+
+  Created by Antonio Casto on 08/06/23.
+  
+*/
+
+NSLocationWhenInUseUsageDescription = "Abbiamo bisogno di accedere alla tua posizione al fine di ottenere i dati meteo dal web per la tua posizione corrente.";
