@@ -23,7 +23,7 @@ final class LocationManager: NSObject, ObservableObject {
         
         // Set delegate and reduced accuracy
         manager.delegate = self
-        manager.desiredAccuracy = kCLLocationAccuracyReduced
+        manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.startUpdatingLocation()
         
     }

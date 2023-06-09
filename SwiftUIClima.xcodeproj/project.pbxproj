@@ -39,6 +39,7 @@
 		B0D6AE152A2F764200660195 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D6AE142A2F764200660195 /* LocationsView.swift */; };
 		B0D6AE172A2F764B00660195 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D6AE162A2F764B00660195 /* SettingsView.swift */; };
 		B0D6AE192A2F765400660195 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D6AE182A2F765400660195 /* WeatherView.swift */; };
+		B0DF7D252A33098600821A43 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DF7D242A33098600821A43 /* WeatherData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		B0D6AE142A2F764200660195 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
 		B0D6AE162A2F764B00660195 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B0D6AE182A2F765400660195 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		B0DF7D242A33098600821A43 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				B00782A02A27D11F0037246D /* AppLocale.swift */,
 				B0D6AE0C2A2F68C300660195 /* AppTheme.swift */,
+				B0DF7D242A33098600821A43 /* WeatherData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				B0D6AE0B2A2F630E00660195 /* ViewExtension.swift in Sources */,
 				B0D6AE152A2F764200660195 /* LocationsView.swift in Sources */,
 				B076B3572A27AD7D00FAB35C /* SwiftUIClimaApp.swift in Sources */,
+				B0DF7D252A33098600821A43 /* WeatherData.swift in Sources */,
 				B0D6AE0D2A2F68C300660195 /* AppTheme.swift in Sources */,
 				B0D6AE192A2F765400660195 /* WeatherView.swift in Sources */,
 				B0B0A9112A32115C00D72775 /* LocationManager.swift in Sources */,

@@ -20,8 +20,9 @@ struct WeatherView: View {
                     .foregroundColor(.red)
             }
         }
-
+        
     }
+    
 }
 
 struct WeatherView_Previews: PreviewProvider {
