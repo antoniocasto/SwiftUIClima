@@ -1,0 +1,5 @@
+# Ignore Mac FS files
+.DS_store
+
+# Ignore Xcode Project config files
+*.xcconfig
