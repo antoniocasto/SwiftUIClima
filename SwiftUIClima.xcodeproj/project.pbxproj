@@ -80,7 +80,6 @@
 		B0D6AE182A2F765400660195 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		B0DF7D242A33098600821A43 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		B0DF7D282A331E2000821A43 /* WeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherService.swift; sourceTree = "<group>"; };
-		B0DF7D2A2A331FA000821A43 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +209,6 @@
 				B03475FA2A27B6AB0030286B /* Service */,
 				B076B35A2A27AD7E00FAB35C /* Assets.xcassets */,
 				B076B35C2A27AD7E00FAB35C /* Preview Content */,
-				B0DF7D2A2A331FA000821A43 /* Config.xcconfig */,
 			);
 			path = SwiftUIClima;
 			sourceTree = "<group>";
