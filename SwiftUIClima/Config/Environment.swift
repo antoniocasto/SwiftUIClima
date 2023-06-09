@@ -11,7 +11,7 @@ import Foundation
 enum Environment {
     
     // This Enum stores keys from Config.xcconfig file
-    enum Keys {
+    private enum Keys {
         
         static let apiKey = "API_KEY"
         
