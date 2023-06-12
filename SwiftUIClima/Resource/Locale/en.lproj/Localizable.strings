@@ -25,3 +25,6 @@
 "WeatherView.locationErrorTitle" = "Location not available";
 "WeatherView.locationErrorDescription" = "SwiftUIClima does not have access to your location. Verify that you have authorized the use of location or that there are no restrictions set.";
 "WeatherView.locationActionDescription" = "Go to Settings";
+"WeatherView.connectionErrorTitle" = "Internet not available";
+"WeatherView.connectionErrorDescription" = "SwiftUIClima does not have access to the internet. Verify that you enabled the use of internet.";
+"WeatherView.connectionActionDescription" = "Go to Settings";

@@ -28,4 +28,9 @@
 "WeatherView.locationErrorTitle" = "Posizione non disponibile";
 "WeatherView.locationErrorDescription" = "SwiftUIClima non ha accesso alla tua posizione. Verifica di aver autorizzato l'uso della localizzazione o che non vi siano restrizioni impostate.";
 "WeatherView.locationActionDescription" = "Vai in Impostazioni";
+"WeatherView.connectionErrorTitle" = "Internet non disponibile";
+"WeatherView.connectionErrorDescription" = "SwiftUIClima non ha accesso a Internet. Verifica di aver abilitato l'uso di Internet.";
+"WeatherView.connectionActionDescription" = "Vai in Impostazioni";
+
+
 

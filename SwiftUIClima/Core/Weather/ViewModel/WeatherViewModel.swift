@@ -12,10 +12,15 @@ import CoreLocation
 final class WeatherViewModel: ObservableObject {
     
     private let locationManager = LocationManager.shared
+    private let networkManager = NetworkManager.shared
     private var cancellables = Set<AnyCancellable>()
     
+    // Location status
     @Published var location: CLLocationCoordinate2D?
     @Published var authStatus: CLAuthorizationStatus = .authorizedWhenInUse
+    
+    // Internet status
+    @Published var isConnected = true
     
     init() {
         setupSubscribers()
@@ -33,6 +38,13 @@ final class WeatherViewModel: ObservableObject {
         locationManager.$authStatus.sink { [weak self] authStatus in
             
             self?.authStatus = authStatus
+            
+        }
+        .store(in: &cancellables)
+        
+        networkManager.$isConnected.sink { [weak self] isConnected in
+            
+            self?.isConnected = isConnected
             
         }
         .store(in: &cancellables)

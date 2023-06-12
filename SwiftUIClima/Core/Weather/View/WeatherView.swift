@@ -21,9 +21,13 @@ struct WeatherView: View {
                 
             } else {
                 
-                VStack {
-                    Text("Weather View")
+                if !viewModel.isConnected {
                     
+                    ErrorView(title: WeatherView.connectionErrorTitle, description: WeatherView.connectionErrorDescription, actionDescription: WeatherView.connectionActionDescription, systemIcon: ErrorType.connectionNotAvailable.icon, action: SystemSettings.openSettings)
+                    
+                } else {
+                    
+                    Text("Weather View")
                     
                 }
                 
@@ -43,8 +47,14 @@ struct WeatherView_Previews: PreviewProvider {
 
 extension WeatherView {
     
+    // Location
     static let locationErrorTitle = LocalizedStringKey("WeatherView.locationErrorTitle")
     static let locationErrorDescription = LocalizedStringKey("WeatherView.locationErrorDescription")
     static let locationActionDescription = LocalizedStringKey("WeatherView.locationActionDescription")
+    
+    // Connection
+    static let connectionErrorTitle = LocalizedStringKey("WeatherView.connectionErrorTitle")
+    static let connectionErrorDescription = LocalizedStringKey("WeatherView.connectionErrorDescription")
+    static let connectionActionDescription = LocalizedStringKey("WeatherView.connectionActionDescription")
     
 }
