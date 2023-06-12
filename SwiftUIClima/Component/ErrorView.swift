@@ -7,6 +7,22 @@
 
 import SwiftUI
 
+enum ErrorType {
+    
+    case locationNotAvailable
+    case internetNotAvailable
+    
+    var icon: String {
+        switch self {
+        case .locationNotAvailable:
+            return "location.slash.fill"
+        case .internetNotAvailable:
+            return "wifi.slash"
+        }
+    }
+    
+}
+
 struct ErrorView: View {
     
     let title: LocalizedStringKey

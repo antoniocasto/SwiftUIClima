@@ -17,7 +17,7 @@ struct WeatherView: View {
             
             if viewModel.authStatus == .denied || viewModel.authStatus == .restricted {
                 
-                ErrorView(title: WeatherView.locationErrorTitle, description: WeatherView.locationErrorDescription, actionDescription: WeatherView.locationActionDescription, systemIcon: "location.slash.fill", action: SystemSettings.openSettings)
+                ErrorView(title: WeatherView.locationErrorTitle, description: WeatherView.locationErrorDescription, actionDescription: WeatherView.locationActionDescription, systemIcon: ErrorType.locationNotAvailable.icon, action: SystemSettings.openSettings)
                 
             } else {
                 
