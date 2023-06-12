@@ -5,25 +5,57 @@
 //  Created by Antonio Casto on 12/06/23.
 //
 
-import Foundation
+import SwiftUI
 import Combine
 import CoreLocation
 
+@MainActor
 final class WeatherViewModel: ObservableObject {
+    
+    // UserDefaults properties for user preferences
+    @AppStorage(AppLocale.preferenceKey) private var appLocale: AppLocale = .system
     
     private let locationManager = LocationManager.shared
     private let networkManager = NetworkManager.shared
     private var cancellables = Set<AnyCancellable>()
     
     // Location status
-    @Published var location: CLLocationCoordinate2D?
+    @Published var location: CLLocationCoordinate2D? {
+        didSet {
+            Task {
+                await fetchWeatherDataByCoordinate()
+            }
+        }
+    }
+    
     @Published var authStatus: CLAuthorizationStatus = .authorizedWhenInUse
     
     // Internet status
     @Published var isConnected = true
     
+    // Weather data
+    @Published var weatherData: WeatherData?
+    @Published var weatherFetchError = false
+    
     init() {
         setupSubscribers()
+    }
+    
+    /// Fetches weather data by coordinate.
+    func fetchWeatherDataByCoordinate() async {
+        
+        guard let location = location else { return }
+        
+        do {
+            
+            weatherData = try await WeatherDataService.fetchWeatherDataByCoordinate(location, locale: appLocale == .system ? SystemSettings.getSystemLocale() : appLocale.rawValue)
+            
+        } catch {
+            
+            weatherFetchError = true
+            
+        }
+        
     }
     
     private func setupSubscribers() {

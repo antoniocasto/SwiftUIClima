@@ -21,13 +21,14 @@ struct WeatherView: View {
                 
             } else {
                 
-                if !viewModel.isConnected {
+                if !viewModel.isConnected && viewModel.weatherData == nil {
                     
                     ErrorView(title: WeatherView.connectionErrorTitle, description: WeatherView.connectionErrorDescription, actionDescription: WeatherView.connectionActionDescription, systemIcon: ErrorType.connectionNotAvailable.icon, action: SystemSettings.openSettings)
                     
                 } else {
                     
-                    Text("Weather View")
+                    WeatherDetailView()
+                        .environmentObject(viewModel)
                     
                 }
                 

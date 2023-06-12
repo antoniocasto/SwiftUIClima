@@ -32,5 +32,8 @@
 "WeatherView.connectionErrorDescription" = "SwiftUIClima non ha accesso a Internet. Verifica di aver abilitato l'uso di Internet.";
 "WeatherView.connectionActionDescription" = "Vai in Impostazioni";
 
+/* WeatherDetailView */
+"WeatherDetailView.fetchingWeather" = "Scarico i dati sul meteo";
+
 
 
