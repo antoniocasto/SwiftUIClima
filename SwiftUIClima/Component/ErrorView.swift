@@ -23,6 +23,7 @@ enum ErrorType {
     
 }
 
+/// View displaying an error. It accepts a title, a description, an icon and an action function with its description.
 struct ErrorView: View {
     
     let title: LocalizedStringKey

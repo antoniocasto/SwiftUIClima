@@ -21,7 +21,11 @@ struct WeatherView: View {
                 
             } else {
                 
-                Text("Weather View")
+                VStack {
+                    Text("Weather View")
+                    
+                    
+                }
                 
             }
             
