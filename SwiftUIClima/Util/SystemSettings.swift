@@ -5,7 +5,7 @@
 //  Created by Antonio Casto on 09/06/23.
 //
 
-import Foundation
+import SwiftUI
 
 /// This is a utility Struct to get system settings.
 struct SystemSettings {
@@ -22,6 +22,15 @@ struct SystemSettings {
         }
         
         return String(locale)
+        
+    }
+    
+    /// This function opens System Settings for the current app.
+    static func openSettings() {
+        
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(url)
+        }
         
     }
     

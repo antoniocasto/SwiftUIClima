@@ -23,3 +23,9 @@
 "ContentView.locations" = "Luoghi";
 "ContentView.weather" = "Meteo";
 "ContentView.settings" = "Impostazioni";
+
+/* WeatherView */
+"WeatherView.locationErrorTitle" = "Posizione non disponibile";
+"WeatherView.locationErrorDescription" = "SwiftUIClima non ha accesso alla tua posizione. Verifica di aver autorizzato l'uso della localizzazione o che non vi siano restrizioni impostate.";
+"WeatherView.locationActionDescription" = "Vai in Impostazioni";
+
