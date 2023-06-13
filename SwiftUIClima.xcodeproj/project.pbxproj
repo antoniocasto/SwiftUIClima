@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B00782A12A27D11F0037246D /* AppLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00782A02A27D11F0037246D /* AppLocale.swift */; };
+		B02278C72A38565400145CE7 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02278C62A38565400145CE7 /* ColorExtension.swift */; };
 		B05822A42A2F449300C9F7B1 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B05822A32A2F449300C9F7B1 /* Lottie */; };
 		B05822B82A2F45BD00C9F7B1 /* 35631-weather-day-scattered-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = B05822A62A2F45BD00C9F7B1 /* 35631-weather-day-scattered-clouds.json */; };
 		B05822B92A2F45BD00C9F7B1 /* 35743-weather-day-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = B05822A72A2F45BD00C9F7B1 /* 35743-weather-day-snow.json */; };
@@ -52,6 +53,7 @@
 
 /* Begin PBXFileReference section */
 		B00782A02A27D11F0037246D /* AppLocale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocale.swift; sourceTree = "<group>"; };
+		B02278C62A38565400145CE7 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		B05822A62A2F45BD00C9F7B1 /* 35631-weather-day-scattered-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "35631-weather-day-scattered-clouds.json"; sourceTree = "<group>"; };
 		B05822A72A2F45BD00C9F7B1 /* 35743-weather-day-snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "35743-weather-day-snow.json"; sourceTree = "<group>"; };
 		B05822A82A2F45BD00C9F7B1 /* 35733-weather-day-thunderstorm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "35733-weather-day-thunderstorm.json"; sourceTree = "<group>"; };
@@ -279,6 +281,7 @@
 			isa = PBXGroup;
 			children = (
 				B0D6AE0A2A2F630E00660195 /* ViewExtension.swift */,
+				B02278C62A38565400145CE7 /* ColorExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -439,6 +442,7 @@
 				B0DF7D312A33337700821A43 /* SystemSettings.swift in Sources */,
 				B0D6AE192A2F765400660195 /* WeatherView.swift in Sources */,
 				B0B0A9112A32115C00D72775 /* LocationManager.swift in Sources */,
+				B02278C72A38565400145CE7 /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
