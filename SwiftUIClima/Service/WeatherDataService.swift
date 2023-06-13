@@ -19,7 +19,7 @@ struct WeatherDataService {
     static func fetchWeatherDataByCoordinate(_ coordinate: CLLocationCoordinate2D, locale: String) async throws -> WeatherData? {
         
         // Get API KEY from Config.xcconfig file
-        let apiKey = Environment.getApiKey()
+        let apiKey = EnvironmentVariable.getApiKey()
         
         guard let url = URL(string: "\(baseUrl)?lat=\(coordinate.latitude)&lon=\(coordinate.longitude)&appid=\(apiKey)&lang=\(locale)") else {
             fatalError("API URL creation failed.")

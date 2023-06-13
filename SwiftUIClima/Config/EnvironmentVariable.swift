@@ -8,7 +8,7 @@
 import Foundation
 
 /// This Enum is used in order to configure environment variables.
-enum Environment {
+enum EnvironmentVariable {
     
     // This Enum stores keys from Config.xcconfig file
     private enum Keys {
@@ -30,7 +30,7 @@ enum Environment {
     
     static func getApiKey() -> String {
         
-        guard let apiKeyString = Environment.getPlistInfoDictionary()[Keys.apiKey] as? String else {
+        guard let apiKeyString = EnvironmentVariable.getPlistInfoDictionary()[Keys.apiKey] as? String else {
             
             fatalError("API Key not set in plist")
             

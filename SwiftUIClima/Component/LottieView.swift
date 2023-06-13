@@ -12,7 +12,6 @@ import Lottie
 struct LottieView: UIViewRepresentable {
     
     let fileName: String
-    let color: UIColor
     
     private let animationView = LottieAnimationView()
     
@@ -23,6 +22,7 @@ struct LottieView: UIViewRepresentable {
         // Configure Lottie animation
         animationView.animation = LottieAnimation.named(fileName)
         animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .autoReverse
         animationView.play()
         
         view.addSubview(animationView)
