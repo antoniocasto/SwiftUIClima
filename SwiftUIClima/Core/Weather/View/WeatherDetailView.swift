@@ -17,7 +17,7 @@ struct WeatherDetailView: View {
     
     // Light Mode
     let lightGradient = LinearGradient(
-        gradient: Gradient(colors: [Color(hex: 0x003B70), Color(hex: 0x003B70), Color(hex: 0x003B70), Color(hex: 0x003B70), Color(hex: 0xEAF2FF)]),
+        gradient: Gradient(colors: [Color(hex: 0x87CEEB), .white]),
         startPoint: .top,
         endPoint: .bottom
     )

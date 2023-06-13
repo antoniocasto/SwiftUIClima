@@ -10,10 +10,12 @@ import SwiftUI
 /// Card used to display weather data. It is composed by a title, an SF Symbol and a String value.
 struct CardView: View {
     
+    @Environment(\.colorScheme) var colorScheme
+    
     let title: LocalizedStringKey
     let systemIcon: String
     let value: String
-    
+        
     var body: some View {
         VStack(spacing: 8) {
             
@@ -32,14 +34,18 @@ struct CardView: View {
         .padding()
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .foregroundStyle(.ultraThinMaterial)
+            Group {
+                if colorScheme == .dark {
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .foregroundStyle(.ultraThinMaterial)
+                } else {
+                    RoundedRectangle(cornerRadius: 20, style: .continuous)
+                        .foregroundStyle(Color(hex: 0x87CEFA))
+                }
+            }
+            
         )
-        .overlay(
-            RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .stroke(.linearGradient(colors: [.clear, .white.opacity(0.3), .white.opacity(0.5), .white.opacity(0.7), .white], startPoint: .bottomTrailing, endPoint: .topLeading), lineWidth: 1)
-        )
-        .shadow(radius: 8, x: 8, y: 8)
+
     }
 }
 
