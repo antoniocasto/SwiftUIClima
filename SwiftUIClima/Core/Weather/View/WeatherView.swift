@@ -13,7 +13,7 @@ struct WeatherView: View {
     
     var body: some View {
         
-        Group {
+        ZStack {
             
             if viewModel.authStatus == .denied || viewModel.authStatus == .restricted {
                 

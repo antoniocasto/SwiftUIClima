@@ -11,24 +11,29 @@ import SwiftUI
 /// The navigation is based on TabView.
 struct ContentView: View {
     
+    @AppStorage("SelectedTab") private var selectedTab: Int = 0
+    
     var body: some View {
         
-        TabView {
+        TabView(selection: $selectedTab) {
             
             LocationsView()
                 .tabItem {
                     Label(ContentView.locations, systemImage: "heart")
                 }
+                .tag(0)
             
             WeatherView()
                 .tabItem {
                     Label(ContentView.weather, systemImage: "cloud.sun")
                 }
+                .tag(1)
             
             SettingsView()
                 .tabItem {
                     Label(ContentView.settings, systemImage: "gear")
                 }
+                .tag(2)
             
         }
         
