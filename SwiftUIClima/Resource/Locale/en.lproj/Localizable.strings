@@ -31,3 +31,5 @@
 
 /* WeatherDetailView */
 "WeatherDetailView.fetchingWeather" = "Downloading weather data";
+"WeatherDetailView.max" = "Max";
+"WeatherDetailView.min" = "Min";

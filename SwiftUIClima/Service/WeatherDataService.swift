@@ -16,12 +16,12 @@ struct WeatherDataService {
     
     /// This function fetches weather data from the API in JSON format and converts it to a WeatherData model.
     /// If an error is raised, it returns nil.
-    static func fetchWeatherDataByCoordinate(_ coordinate: CLLocationCoordinate2D, locale: String) async throws -> WeatherData? {
+    static func fetchWeatherDataByCoordinate(_ coordinate: CLLocationCoordinate2D, locale: String, units: String = "metric") async throws -> WeatherData? {
         
         // Get API KEY from Config.xcconfig file
         let apiKey = EnvironmentVariable.getApiKey()
         
-        guard let url = URL(string: "\(baseUrl)?lat=\(coordinate.latitude)&lon=\(coordinate.longitude)&appid=\(apiKey)&lang=\(locale)") else {
+        guard let url = URL(string: "\(baseUrl)?lat=\(coordinate.latitude)&lon=\(coordinate.longitude)&appid=\(apiKey)&lang=\(locale)&units=\(units)") else {
             fatalError("API URL creation failed.")
         }
         

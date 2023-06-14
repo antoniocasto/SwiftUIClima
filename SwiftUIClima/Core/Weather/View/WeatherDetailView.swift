@@ -53,30 +53,37 @@ struct WeatherDetailView: View {
                 ScrollView(showsIndicators: false) {
                     VStack {
                         
-                        LottieView(fileName: "weather-day-clear-sky")
-                            .frame(width: screenWidth / 2.5, height: screenHeight / 4.5)
-                            .padding()
-                            .clipShape(Circle())
-                            .background(
-                                Circle()
-                                    .strokeBorder(angularGradient, lineWidth: 4)
-                            )
+                        let dayNight = weatherData.sys.dayNight
+                        
+                        if let mainIcon = weatherData.weather[0].mainIcon[dayNight] {
+                            LottieView(fileName: mainIcon)
+                                .frame(width: screenWidth / 2.5, height: screenHeight / 4.5)
+                                .padding()
+                                .clipShape(Circle())
+                                .background(
+                                    Circle()
+                                        .strokeBorder(angularGradient, lineWidth: 4)
+                                )
+                        }
                         
                         VStack {
                             
-                            Text("Noto, IT")
+                            Text("\(weatherData.name), \(weatherData.sys.country)")
                                 .font(.largeTitle)
                             
-                            Text("25°")
+                            Text("\(weatherData.main.intTemp)°")
                                 .font(.system(size: 80))
                                 .fontWeight(.semibold)
                                 .fontDesign(.rounded)
                             
                             VStack(spacing: 8) {
-                                Text("Clear sky")
+                                Text(weatherData.weather[0].description.capitalizedSentence)
                                 HStack {
-                                    Text("MAX: 26°")
-                                    Text("MIN: 17°")
+                                    Text(WeatherDetailView.max) +
+                                    Text(": \(weatherData.main.intTempMax)°")
+                                    
+                                    Text(WeatherDetailView.min) +
+                                    Text(": \(weatherData.main.intTempMin)°")
                                 }
                             }
                             .font(.title2)
@@ -116,5 +123,7 @@ struct WeatherDetailView_Previews: PreviewProvider {
 extension WeatherDetailView {
     
     static let fetchingWeather = LocalizedStringKey("WeatherDetailView.fetchingWeather")
+    static let max = LocalizedStringKey("WeatherDetailView.max")
+    static let min = LocalizedStringKey("WeatherDetailView.min")
     
 }
