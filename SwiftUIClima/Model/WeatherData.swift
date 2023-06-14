@@ -90,6 +90,10 @@ struct WeatherData: Decodable {
             Int(tempMin.rounded())
         }
         
+        var intFeelsLike: Int {
+            Int(feelsLike.rounded())
+        }
+        
     }
     
     struct Wind: Decodable {
@@ -113,6 +117,14 @@ struct WeatherData: Decodable {
         // Day or night
         var dayNight: Date.DayNight {
             return Date.checkDateNight(sunrise: Date(timeIntervalSince1970: sunrise), sunset: Date(timeIntervalSince1970: sunset))
+        }
+        
+        var sunrise24H: String {
+            Date(timeIntervalSince1970: sunrise).getHourOfTheDay24HFormat()
+        }
+        
+        var sunset24H: String {
+            Date(timeIntervalSince1970: sunset).getHourOfTheDay24HFormat()
         }
         
     }

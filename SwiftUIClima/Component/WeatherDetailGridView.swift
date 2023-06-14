@@ -16,14 +16,13 @@ struct WeatherDetailGridView: View {
     var body: some View {
         
         LazyVGrid(columns: columns, spacing: 16) {
-            CardView(title: WeatherDetailGridView.sunrise, systemIcon: "sunrise", value: "06:20")
-            CardView(title: WeatherDetailGridView.sunset, systemIcon: "sunset", value: "20:30")
-            CardView(title: WeatherDetailGridView.wind, systemIcon: "wind", value: "7 km/h")
-            CardView(title: WeatherDetailGridView.feelsLike, systemIcon: "thermometer.sun", value: "27°")
-            CardView(title: WeatherDetailGridView.humidity, systemIcon: "humidity", value: "60%")
-            CardView(title: WeatherDetailGridView.visibility, systemIcon: "eye.fill", value: "26 km")
-            CardView(title: WeatherDetailGridView.pressure, systemIcon: "barometer", value: "1.011 hPa")
-            CardView(title: WeatherDetailGridView.seaLevel, systemIcon: "water.waves", value: "140 m")
+            CardView(title: WeatherDetailGridView.sunrise, systemIcon: "sunrise", value: weatherData.sys.sunrise24H)
+            CardView(title: WeatherDetailGridView.sunset, systemIcon: "sunset", value: weatherData.sys.sunset24H)
+            CardView(title: WeatherDetailGridView.wind, systemIcon: "wind", value: "\(Int(weatherData.wind.speed.rounded())) km/h")
+            CardView(title: WeatherDetailGridView.feelsLike, systemIcon: "thermometer.sun", value: "\(weatherData.main.intFeelsLike)°")
+            CardView(title: WeatherDetailGridView.humidity, systemIcon: "humidity", value: "\(weatherData.main.humidity)%")
+            CardView(title: WeatherDetailGridView.visibility, systemIcon: "eye.fill", value: "\(weatherData.visibility / 1000) km")
+            CardView(title: WeatherDetailGridView.pressure, systemIcon: "barometer", value: "\(weatherData.main.pressure) hPa")
         }
         
     }
@@ -37,7 +36,4 @@ extension WeatherDetailGridView {
     static let humidity = LocalizedStringKey("WeatherDetailGridView.humidity")
     static let visibility = LocalizedStringKey("WeatherDetailGridView.visibility")
     static let pressure = LocalizedStringKey("WeatherDetailGridView.pressure")
-    static let seaLevel = LocalizedStringKey("WeatherDetailGridView.seaLevel")
-
-
 }
