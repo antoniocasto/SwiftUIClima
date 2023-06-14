@@ -33,3 +33,13 @@
 "WeatherDetailView.fetchingWeather" = "Downloading weather data";
 "WeatherDetailView.max" = "Max";
 "WeatherDetailView.min" = "Min";
+
+/* WeatherDetailGridView */
+"WeatherDetailGridView.sunrise" = "Sunrise";
+"WeatherDetailGridView.sunset" = "Sunset";
+"WeatherDetailGridView.wind" = "Wind";
+"WeatherDetailGridView.feelsLike" = "Feels like";
+"WeatherDetailGridView.humidity" = "Humidity";
+"WeatherDetailGridView.visibility" = "Visibility";
+"WeatherDetailGridView.pressure" = "Pressure";
+"WeatherDetailGridView.seaLevel" = "Sea level";

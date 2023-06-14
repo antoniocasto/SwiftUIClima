@@ -37,5 +37,22 @@
 "WeatherDetailView.max" = "Max";
 "WeatherDetailView.min" = "Min";
 
+/* WeatherDetailGridView */
+"WeatherDetailGridView.sunrise" = "Alba";
+"WeatherDetailGridView.sunset" = "Tramonto";
+"WeatherDetailGridView.wind" = "Vento";
+"WeatherDetailGridView.feelsLike" = "Percepita";
+"WeatherDetailGridView.humidity" = "Umidità";
+"WeatherDetailGridView.visibility" = "Visibilità";
+"WeatherDetailGridView.pressure" = "Pressione";
+"WeatherDetailGridView.seaLevel" = "Livello mare";
+
+
+
+
+
+
+
+
 
 
