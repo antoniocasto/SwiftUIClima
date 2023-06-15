@@ -98,6 +98,7 @@ struct WeatherDetailView: View {
                             
                             
                         }
+                        .padding(.top, 32)
                         
                     }
                     .refreshable {
