@@ -22,8 +22,10 @@ final class WeatherViewModel: ObservableObject {
     // Location status
     @Published var location: CLLocationCoordinate2D? {
         didSet {
-            Task {
-                await fetchWeatherDataByCoordinate()
+            if location != nil {
+                Task {
+                    await fetchWeatherDataByCoordinate()
+                }
             }
         }
     }
@@ -49,7 +51,7 @@ final class WeatherViewModel: ObservableObject {
         do {
             
             weatherData = try await WeatherDataService.fetchWeatherDataByCoordinate(location, locale: appLocale == .system ? SystemSettings.getSystemLocale() : appLocale.rawValue)
-            
+                        
         } catch {
             
             weatherFetchError = true

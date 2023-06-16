@@ -38,7 +38,7 @@ struct WeatherDataService {
         // Deconde JSON data
         guard let decodedData = try? decoder.decode(WeatherData.self, from: data) else { return nil
         }
-        
+                
         return decodedData
         
     }

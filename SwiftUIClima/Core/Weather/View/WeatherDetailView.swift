@@ -43,14 +43,19 @@ struct WeatherDetailView: View {
     
     var body: some View {
         
-        Group {
+        
+        
+        
+        
+        NavigationStack {
             
-            if let weatherData = viewModel.weatherData {
+            Group {
                 
-                let screenWidth = UIScreen.main.bounds.width
-                let screenHeight = UIScreen.main.bounds.height
-                
-                NavigationStack {
+                if let weatherData = viewModel.weatherData {
+                    
+                    let screenWidth = UIScreen.main.bounds.width
+                    let screenHeight = UIScreen.main.bounds.height
+                    
                     ScrollView(showsIndicators: false) {
                         VStack {
                             
@@ -101,23 +106,24 @@ struct WeatherDetailView: View {
                         .padding(.top, 32)
                         
                     }
-                    .refreshable {
-                        Task {
-                            await viewModel.fetchWeatherDataByCoordinate()
-                        }
+                    
+                } else {
+                    
+                    ProgressView {
+                        Label(WeatherDetailView.fetchingWeather, systemImage: "icloud.and.arrow.down.fill")
                     }
-                    .background(
-                        gradient
-                    )
-                }
-                
-            } else {
-                ProgressView {
-                    Label(WeatherDetailView.fetchingWeather, systemImage: "icloud.and.arrow.down.fill")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    
                 }
             }
+            .refreshable {
+                LocationManager.shared.fetchLocation()
+            }
+            .background(
+                gradient
+            )
+    
         }
-        
     }
     
 }

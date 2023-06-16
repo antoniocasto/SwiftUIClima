@@ -28,6 +28,12 @@ final class LocationManager: NSObject, ObservableObject {
         
     }
     
+    /// Starts user location fetching.
+    func fetchLocation() {
+        userLocation = nil
+        manager.startUpdatingLocation()
+    }
+    
 }
 
 //MARK: - CLLocationManager Delegate methods
@@ -58,8 +64,12 @@ extension LocationManager: CLLocationManagerDelegate {
         
         guard let location = locations.last else { return }
         
-        // Publish user location
-        userLocation = location
+        if userLocation == nil {
+                        
+            // Publish user location
+            userLocation = location
+            
+        }
         
         // Stop updating location
         manager.stopUpdatingLocation()
