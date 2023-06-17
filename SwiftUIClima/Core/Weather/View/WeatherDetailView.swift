@@ -12,7 +12,6 @@ struct WeatherDetailView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
-    
     @EnvironmentObject var viewModel: WeatherViewModel
     
     // Light Mode
@@ -29,9 +28,6 @@ struct WeatherDetailView: View {
         endPoint: .bottom
     )
     
-    // Gradient for Lottie View circle border
-    let angularGradient = LinearGradient(colors: [.clear, .white, .clear], startPoint: .topLeading, endPoint: .bottomTrailing)
-    
     // Used gradient
     var gradient: LinearGradient {
         if colorScheme == .dark {
@@ -42,7 +38,7 @@ struct WeatherDetailView: View {
     }
     
     var body: some View {
-
+        
         NavigationStack {
             
             ZStack(alignment: .top) {
@@ -50,9 +46,6 @@ struct WeatherDetailView: View {
                 Group {
                     
                     if let weatherData = viewModel.weatherData {
-                        
-                        let screenWidth = UIScreen.main.bounds.width
-                        let screenHeight = UIScreen.main.bounds.height
                         
                         ZStack(alignment: .topTrailing) {
                             
@@ -68,63 +61,38 @@ struct WeatherDetailView: View {
                             
                             VStack {
                                 
-                                let dayNight = weatherData.sys.dayNight
-                                
-                                if let mainIcon = weatherData.weather[0].mainIcon[dayNight] {
-                                    LottieView(fileName: mainIcon)
-                                        .frame(width: screenWidth / 2.5, height: screenHeight / 4.5)
-                                        .padding()
-                                        .clipShape(Circle())
-                                        .background(
-                                            Circle()
-                                                .strokeBorder(angularGradient, lineWidth: 4)
-                                        )
-                                }
-                                
-                                VStack {
+                                if viewModel.bottomSheetScaleFactor == .small {
                                     
-                                    Text("\(weatherData.name), \(weatherData.sys.country)")
-                                        .font(.largeTitle)
+                                    WeatherDetailLargeView(weatherData: weatherData)
+                                        .transition(.move(edge: .top).combined(with: .opacity))
                                     
-                                    Text("\(weatherData.main.intTemp)°")
-                                        .font(.system(size: 80))
-                                        .fontWeight(.semibold)
-                                        .fontDesign(.rounded)
+                                } else {
                                     
-                                    VStack(spacing: 8) {
-                                        Text(weatherData.weather[0].description.capitalizedSentence)
-                                        HStack {
-                                            Text(WeatherDetailView.max) +
-                                            Text(": \(weatherData.main.intTempMax)°")
-                                            
-                                            Text(WeatherDetailView.min) +
-                                            Text(": \(weatherData.main.intTempMin)°")
-                                        }
-                                    }
-                                    .font(.title2)
-                                    .fontWeight(.semibold)
+                                    WeatherDetailSmallView(weatherData: weatherData)
+                                        .transition(.move(edge: .bottom).combined(with: .opacity))
                                     
                                 }
-                                .foregroundColor(.white)
-                                
-                                Spacer()
                                 
                             }
                             .frame(maxWidth: .infinity)
+                            .animation(.easeInOut(duration: 0.3), value: viewModel.bottomSheetScaleFactor)
                             
+                            // Bottom Sheet
                             BottomSheetView(scaleFactor: $viewModel.bottomSheetScaleFactor) {
                                 
+                                // Grid for weather details
                                 WeatherDetailGridView(weatherData: weatherData)
                                     .padding(.horizontal)
                                 
                             }
                             
                         }
-                            
+                        
                         
                         
                     } else {
                         
+                        // ProgressView shown when fetching data
                         ProgressView {
                             Label(WeatherDetailView.fetchingWeather, systemImage: "icloud.and.arrow.down.fill")
                         }
@@ -137,13 +105,14 @@ struct WeatherDetailView: View {
                 )
                 
                 if !viewModel.isConnected {
+                    // Alert appearing when device is offline
                     OfflineAlertView()
                         .transition(.move(edge: .top))
                         .zIndex(100)
                 }
                 
             }
-    
+            
         }
     }
     
