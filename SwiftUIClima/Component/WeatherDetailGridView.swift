@@ -22,7 +22,6 @@ struct WeatherDetailGridView: View {
             CardView(title: WeatherDetailGridView.feelsLike, systemIcon: "thermometer.sun", value: "\(weatherData.main.intFeelsLike)°")
             CardView(title: WeatherDetailGridView.humidity, systemIcon: "humidity", value: "\(weatherData.main.humidity)%")
             CardView(title: WeatherDetailGridView.visibility, systemIcon: "eye.fill", value: "\(weatherData.visibility / 1000) km")
-            CardView(title: WeatherDetailGridView.pressure, systemIcon: "barometer", value: "\(weatherData.main.pressure) hPa")
         }
         
     }

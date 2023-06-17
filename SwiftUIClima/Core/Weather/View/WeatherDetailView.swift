@@ -54,7 +54,18 @@ struct WeatherDetailView: View {
                         let screenWidth = UIScreen.main.bounds.width
                         let screenHeight = UIScreen.main.bounds.height
                         
-                        ScrollView(showsIndicators: false) {
+                        ZStack(alignment: .topTrailing) {
+                            
+                            // Button to refresh location and weather data
+                            Button {
+                                LocationManager.shared.fetchLocation()
+                            } label: {
+                                Image(systemName: "arrow.clockwise")
+                                    .imageScale(.large)
+                                    .foregroundColor(.white)
+                            }
+                            .padding()
+                            
                             VStack {
                                 
                                 let dayNight = weatherData.sys.dayNight
@@ -96,14 +107,21 @@ struct WeatherDetailView: View {
                                 }
                                 .foregroundColor(.white)
                                 
+                                Spacer()
+                                
+                            }
+                            .frame(maxWidth: .infinity)
+                            
+                            BottomSheetView(scaleFactor: $viewModel.bottomSheetScaleFactor) {
+                                
                                 WeatherDetailGridView(weatherData: weatherData)
                                     .padding(.horizontal)
                                 
-                                
                             }
-                            .padding(.top, 32)
                             
                         }
+                            
+                        
                         
                     } else {
                         
@@ -113,9 +131,6 @@ struct WeatherDetailView: View {
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
                         
                     }
-                }
-                .refreshable {
-                    LocationManager.shared.fetchLocation()
                 }
                 .background(
                     gradient

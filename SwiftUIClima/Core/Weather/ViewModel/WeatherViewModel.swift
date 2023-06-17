@@ -39,6 +39,9 @@ final class WeatherViewModel: ObservableObject {
     @Published var weatherData: WeatherData?
     @Published var weatherFetchError = false
     
+    // Bottom Sheet
+    @Published var bottomSheetScaleFactor: BottomSheetScaleFactor = .small
+    
     init() {
         setupSubscribers()
     }

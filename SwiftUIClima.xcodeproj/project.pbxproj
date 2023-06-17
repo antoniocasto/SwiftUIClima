@@ -12,6 +12,7 @@
 		B02278C92A38667900145CE7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02278C82A38667900145CE7 /* CardView.swift */; };
 		B02278CD2A38732600145CE7 /* WeatherDetailGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02278CC2A38732600145CE7 /* WeatherDetailGridView.swift */; };
 		B0360DD32A3D95F90060846F /* OfflineAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0360DD22A3D95F90060846F /* OfflineAlertView.swift */; };
+		B0360DD52A3D9F5D0060846F /* BottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0360DD42A3D9F5D0060846F /* BottomSheetView.swift */; };
 		B05822A42A2F449300C9F7B1 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = B05822A32A2F449300C9F7B1 /* Lottie */; };
 		B05822B82A2F45BD00C9F7B1 /* day-scattered-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = B05822A62A2F45BD00C9F7B1 /* day-scattered-clouds.json */; };
 		B05822B92A2F45BD00C9F7B1 /* day-snow.json in Resources */ = {isa = PBXBuildFile; fileRef = B05822A72A2F45BD00C9F7B1 /* day-snow.json */; };
@@ -62,6 +63,7 @@
 		B02278C82A38667900145CE7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		B02278CC2A38732600145CE7 /* WeatherDetailGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDetailGridView.swift; sourceTree = "<group>"; };
 		B0360DD22A3D95F90060846F /* OfflineAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineAlertView.swift; sourceTree = "<group>"; };
+		B0360DD42A3D9F5D0060846F /* BottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomSheetView.swift; sourceTree = "<group>"; };
 		B05822A62A2F45BD00C9F7B1 /* day-scattered-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "day-scattered-clouds.json"; sourceTree = "<group>"; };
 		B05822A72A2F45BD00C9F7B1 /* day-snow.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "day-snow.json"; sourceTree = "<group>"; };
 		B05822A82A2F45BD00C9F7B1 /* day-thunderstorm.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "day-thunderstorm.json"; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				B02278C82A38667900145CE7 /* CardView.swift */,
 				B02278CC2A38732600145CE7 /* WeatherDetailGridView.swift */,
 				B0360DD22A3D95F90060846F /* OfflineAlertView.swift */,
+				B0360DD42A3D9F5D0060846F /* BottomSheetView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				B02278CD2A38732600145CE7 /* WeatherDetailGridView.swift in Sources */,
 				B0DF7D252A33098600821A43 /* WeatherData.swift in Sources */,
 				B0FCEBC22A39BA2300AACDAA /* DateExtension.swift in Sources */,
+				B0360DD52A3D9F5D0060846F /* BottomSheetView.swift in Sources */,
 				B0BE37002A3705CA00F84D1B /* ErrorView.swift in Sources */,
 				B02278C92A38667900145CE7 /* CardView.swift in Sources */,
 				B0D6AE0D2A2F68C300660195 /* AppTheme.swift in Sources */,

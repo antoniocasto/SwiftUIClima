@@ -72,9 +72,6 @@ struct WeatherData: Decodable {
         // Max temperature
         let tempMax: Float
         
-        // Atmospheric pressure
-        let pressure: Int
-        
         // Humidity in %
         let humidity: Int
         
