@@ -78,7 +78,9 @@ final class WeatherViewModel: ObservableObject {
         
         networkManager.$isConnected.sink { [weak self] isConnected in
             
-            self?.isConnected = isConnected
+            withAnimation(.easeInOut(duration: 0.3)) {
+                self?.isConnected = isConnected
+            }
             
         }
         .store(in: &cancellables)

@@ -42,3 +42,7 @@
 "WeatherDetailGridView.humidity" = "Humidity";
 "WeatherDetailGridView.visibility" = "Visibility";
 "WeatherDetailGridView.pressure" = "Pressure";
+
+/* OfflineAlertView */
+"OfflineAlertView.offlineTitle" = "You are offline.";
+"OfflineAlertView.offlineMessage" = "Enable your internet connection if it's disabled.";

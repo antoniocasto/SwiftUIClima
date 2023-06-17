@@ -42,86 +42,92 @@ struct WeatherDetailView: View {
     }
     
     var body: some View {
-        
-        
-        
-        
-        
+
         NavigationStack {
             
-            Group {
+            ZStack(alignment: .top) {
                 
-                if let weatherData = viewModel.weatherData {
+                Group {
                     
-                    let screenWidth = UIScreen.main.bounds.width
-                    let screenHeight = UIScreen.main.bounds.height
-                    
-                    ScrollView(showsIndicators: false) {
-                        VStack {
-                            
-                            let dayNight = weatherData.sys.dayNight
-                            
-                            if let mainIcon = weatherData.weather[0].mainIcon[dayNight] {
-                                LottieView(fileName: mainIcon)
-                                    .frame(width: screenWidth / 2.5, height: screenHeight / 4.5)
-                                    .padding()
-                                    .clipShape(Circle())
-                                    .background(
-                                        Circle()
-                                            .strokeBorder(angularGradient, lineWidth: 4)
-                                    )
-                            }
-                            
+                    if let weatherData = viewModel.weatherData {
+                        
+                        let screenWidth = UIScreen.main.bounds.width
+                        let screenHeight = UIScreen.main.bounds.height
+                        
+                        ScrollView(showsIndicators: false) {
                             VStack {
                                 
-                                Text("\(weatherData.name), \(weatherData.sys.country)")
-                                    .font(.largeTitle)
+                                let dayNight = weatherData.sys.dayNight
                                 
-                                Text("\(weatherData.main.intTemp)°")
-                                    .font(.system(size: 80))
-                                    .fontWeight(.semibold)
-                                    .fontDesign(.rounded)
-                                
-                                VStack(spacing: 8) {
-                                    Text(weatherData.weather[0].description.capitalizedSentence)
-                                    HStack {
-                                        Text(WeatherDetailView.max) +
-                                        Text(": \(weatherData.main.intTempMax)°")
-                                        
-                                        Text(WeatherDetailView.min) +
-                                        Text(": \(weatherData.main.intTempMin)°")
-                                    }
+                                if let mainIcon = weatherData.weather[0].mainIcon[dayNight] {
+                                    LottieView(fileName: mainIcon)
+                                        .frame(width: screenWidth / 2.5, height: screenHeight / 4.5)
+                                        .padding()
+                                        .clipShape(Circle())
+                                        .background(
+                                            Circle()
+                                                .strokeBorder(angularGradient, lineWidth: 4)
+                                        )
                                 }
-                                .font(.title2)
-                                .fontWeight(.semibold)
+                                
+                                VStack {
+                                    
+                                    Text("\(weatherData.name), \(weatherData.sys.country)")
+                                        .font(.largeTitle)
+                                    
+                                    Text("\(weatherData.main.intTemp)°")
+                                        .font(.system(size: 80))
+                                        .fontWeight(.semibold)
+                                        .fontDesign(.rounded)
+                                    
+                                    VStack(spacing: 8) {
+                                        Text(weatherData.weather[0].description.capitalizedSentence)
+                                        HStack {
+                                            Text(WeatherDetailView.max) +
+                                            Text(": \(weatherData.main.intTempMax)°")
+                                            
+                                            Text(WeatherDetailView.min) +
+                                            Text(": \(weatherData.main.intTempMin)°")
+                                        }
+                                    }
+                                    .font(.title2)
+                                    .fontWeight(.semibold)
+                                    
+                                }
+                                .foregroundColor(.white)
+                                
+                                WeatherDetailGridView(weatherData: weatherData)
+                                    .padding(.horizontal)
+                                
                                 
                             }
-                            .foregroundColor(.white)
-                            
-                            WeatherDetailGridView(weatherData: weatherData)
-                                .padding(.horizontal)
-                            
+                            .padding(.top, 32)
                             
                         }
-                        .padding(.top, 32)
+                        
+                    } else {
+                        
+                        ProgressView {
+                            Label(WeatherDetailView.fetchingWeather, systemImage: "icloud.and.arrow.down.fill")
+                        }
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                         
                     }
-                    
-                } else {
-                    
-                    ProgressView {
-                        Label(WeatherDetailView.fetchingWeather, systemImage: "icloud.and.arrow.down.fill")
-                    }
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    
                 }
+                .refreshable {
+                    LocationManager.shared.fetchLocation()
+                }
+                .background(
+                    gradient
+                )
+                
+                if !viewModel.isConnected {
+                    OfflineAlertView()
+                        .transition(.move(edge: .top))
+                        .zIndex(100)
+                }
+                
             }
-            .refreshable {
-                LocationManager.shared.fetchLocation()
-            }
-            .background(
-                gradient
-            )
     
         }
     }

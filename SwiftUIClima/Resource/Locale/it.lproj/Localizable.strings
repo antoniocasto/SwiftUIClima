@@ -46,6 +46,9 @@
 "WeatherDetailGridView.visibility" = "Visibilità";
 "WeatherDetailGridView.pressure" = "Pressione";
 
+/* OfflineAlertView */
+"OfflineAlertView.offlineTitle" = "Sei offline.";
+"OfflineAlertView.offlineMessage" = "Abilita la connessione ad internet se è disattivata.";
 
 
 
