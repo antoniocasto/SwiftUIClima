@@ -24,6 +24,11 @@ struct WeatherView: View {
                 if !viewModel.isConnected && viewModel.weatherData == nil {
                     
                     ErrorView(title: WeatherView.connectionErrorTitle, description: WeatherView.connectionErrorDescription, actionDescription: WeatherView.connectionActionDescription, systemIcon: ErrorType.connectionNotAvailable.icon, action: SystemSettings.openSettings)
+                        .onDisappear {
+                            Task {
+                                await viewModel.fetchWeatherDataByCoordinate()
+                            }
+                        }
                     
                 } else {
                     
