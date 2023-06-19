@@ -57,7 +57,7 @@ struct BottomSheetView<Content: View>: View {
                     .blur(radius: scaleFactor == .large ? 10.0 : 0.0)
                     
                 }
-                .frame(height: height)
+                .frame(height: height + 150)
                 .frame(maxWidth: .infinity)
                 .background(.regularMaterial)
                 .cornerRadius(20, corners: [.topLeft, .topRight])
