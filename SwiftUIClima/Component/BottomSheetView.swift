@@ -11,12 +11,12 @@ enum BottomSheetScaleFactor {
     case small
     case large
     
-    var scaleFactorValue: Double {
+    var emptyScreenFactor: Double {
         switch self {
         case .small:
-            return 1 / 3
+            return 1 / 5
         case .large:
-            return 4 / 5
+            return 7 / 8
         }
     }
 }
@@ -31,8 +31,7 @@ struct BottomSheetView<Content: View>: View {
     let content: () -> Content
     
     @State private var dragState: CGFloat = .zero
-    @State private var sheetHeight: CGFloat = .zero
-    
+    @State private var offset: CGFloat = .zero
     
     var body: some View {
         GeometryReader { proxy in
@@ -55,37 +54,42 @@ struct BottomSheetView<Content: View>: View {
                             .frame(maxWidth: .infinity)
                     }
                     .padding(.vertical, 32)
-                                        
+                    .blur(radius: scaleFactor == .large ? 10.0 : 0.0)
+                    
                 }
-                .frame(height: sheetHeight)
+                .frame(height: height)
                 .frame(maxWidth: .infinity)
                 .background(.regularMaterial)
                 .cornerRadius(20, corners: [.topLeft, .topRight])
-                .offset(y: dragState)
+                .offset(y: dragState + offset)
                 .gesture(
                     DragGesture()
                         .onChanged { dragValue in
+                            
+                            guard (dragValue.translation.height > 0 && scaleFactor == .small) || scaleFactor == .large else { return }
+                            
                             dragState = dragValue.translation.height
                         }
                         .onEnded { dragValue in
                             
                             if dragValue.translation.height <= -100 {
-                                scaleFactor = .large
-                            } else if dragValue.translation.height >= 100 {
                                 scaleFactor = .small
+                                offset = height * scaleFactor.emptyScreenFactor
+                            } else if dragValue.translation.height >= 100 {
+                                scaleFactor = .large
+                                offset = height * scaleFactor.emptyScreenFactor
                             }
-                            
-                            sheetHeight = height * scaleFactor.scaleFactorValue
                             
                             dragState = .zero
                         }
                 )
                 .onAppear {
-                    sheetHeight = height * scaleFactor.scaleFactorValue
+                    offset = height * scaleFactor.emptyScreenFactor
                 }
-                .animation(.easeInOut(duration: 0.3), value: sheetHeight)
+                .animation(.easeInOut(duration: 0.3), value: offset)
                 .animation(.easeInOut(duration: 0.3), value: dragState)
             }
+            
         }
         
     }

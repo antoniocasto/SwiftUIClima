@@ -61,7 +61,7 @@ struct WeatherDetailView: View {
                             
                             VStack {
                                 
-                                if viewModel.bottomSheetScaleFactor == .small {
+                                if viewModel.bottomSheetScaleFactor == .large {
                                     
                                     WeatherDetailLargeView(weatherData: weatherData)
                                         .transition(.move(edge: .top).combined(with: .opacity))
@@ -70,6 +70,7 @@ struct WeatherDetailView: View {
                                     
                                     WeatherDetailSmallView(weatherData: weatherData)
                                         .transition(.move(edge: .bottom).combined(with: .opacity))
+                                        .padding(.top, 32)
                                     
                                 }
                                 
@@ -87,7 +88,6 @@ struct WeatherDetailView: View {
                             }
                             
                         }
-                        
                         
                         
                     } else {

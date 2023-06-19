@@ -40,7 +40,7 @@ final class WeatherViewModel: ObservableObject {
     @Published var weatherFetchError = false
     
     // Bottom Sheet
-    @Published var bottomSheetScaleFactor: BottomSheetScaleFactor = .small
+    @Published var bottomSheetScaleFactor: BottomSheetScaleFactor = .large
     
     init() {
         setupSubscribers()

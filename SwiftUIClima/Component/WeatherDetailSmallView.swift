@@ -58,7 +58,6 @@ struct WeatherDetailSmallView: View {
                 
             }
             .padding(.horizontal)
-            .padding(.top)
         }
     }
 }

@@ -18,9 +18,11 @@ struct WeatherDetailLargeView: View {
     let angularGradient = LinearGradient(colors: [.clear, .white, .clear], startPoint: .topLeading, endPoint: .bottomTrailing)
     
     var body: some View {
-        Group {
+        VStack {
             
             let dayNight = weatherData.sys.dayNight
+            
+            Spacer()
             
             if let mainIcon = weatherData.weather[0].mainIcon[dayNight] {
                 LottieView(fileName: mainIcon)
@@ -59,6 +61,7 @@ struct WeatherDetailLargeView: View {
             }
             .foregroundColor(.white)
             
+            Spacer()
             Spacer()
         }
     }
