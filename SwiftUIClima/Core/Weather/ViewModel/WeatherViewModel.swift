@@ -52,7 +52,7 @@ final class WeatherViewModel: ObservableObject {
         guard let location = location else { return }
         
         do {
-            
+            weatherData = nil
             weatherData = try await WeatherDataService.fetchWeatherDataByCoordinate(location, locale: appLocale == .system ? SystemSettings.getSystemLocale() : appLocale.rawValue)
                         
         } catch {
