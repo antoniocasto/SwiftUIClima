@@ -19,6 +19,9 @@ struct WeatherData: Decodable {
     
     struct Weather: Decodable {
         
+        // Weather condition unique identifier
+        let id: Int
+        
         // Main weather conditions
         let main: String
         
@@ -32,17 +35,17 @@ struct WeatherData: Decodable {
             case "Thunderstorm":
                 return [.day: "day-thunderstorm", .night: "night-thunderstorm"]
             case "Clouds":
-                switch description {
-                case "few clouds":
+                switch id {
+                case 801:
                     return [.day: "day-few-clouds", .night: "night-few-clouds"]
-                case "broken clouds":
+                case 803:
                     return [.day: "day-broken-clouds", .night: "night-broken-clouds"]
                 default:
                     return [.day: "day-scattered-clouds", .night: "night-scattered-clouds"]
                 }
             case "Rain":
-                switch description {
-                case "shower rain":
+                switch id {
+                case 521:
                     return [.day: "day-shower-rains", .night: "night-shower-rains"]
                 default:
                     return [.day: "day-rain", .night: "night-rain"]
