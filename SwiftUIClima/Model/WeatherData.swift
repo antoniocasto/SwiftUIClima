@@ -64,35 +64,19 @@ struct WeatherData: Decodable {
     struct Main: Decodable {
         
         // Temperature
-        let temp: Float
+        let temp: Double
         
         // Human perception of the temperature
-        let feelsLike: Float
+        let feelsLike: Double
         
         // Min temperature
-        let tempMin: Float
+        let tempMin: Double
         
         // Max temperature
-        let tempMax: Float
+        let tempMax: Double
         
         // Humidity in %
         let humidity: Int
-        
-        var intTemp: Int {
-            Int(temp.rounded())
-        }
-        
-        var intTempMax: Int {
-            Int(tempMax.rounded())
-        }
-        
-        var intTempMin: Int {
-            Int(tempMin.rounded())
-        }
-        
-        var intFeelsLike: Int {
-            Int(feelsLike.rounded())
-        }
         
     }
     

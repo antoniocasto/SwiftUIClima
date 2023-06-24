@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct WeatherDetailSmallView: View {
+    
+    @AppStorage(AppTemperature.preferenceKey) private var temperatureUnit: AppTemperature = .celsius
         
     let weatherData: WeatherData
     
@@ -50,7 +52,7 @@ struct WeatherDetailSmallView: View {
                 
                 Spacer()
                 
-                Text("\(weatherData.main.intTemp)°")
+                Text(weatherData.main.temp.formatTemperatureWith(unit: .celsius, useFractionDigits: false, convertTo: temperatureUnit == .fahrenheit ? .fahrenheit : nil))
                     .font(.largeTitle)
                     .fontWeight(.semibold)
                     .fontDesign(.rounded)

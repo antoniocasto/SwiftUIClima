@@ -9,6 +9,8 @@ import SwiftUI
 
 struct WeatherDetailLargeView: View {
     
+    @AppStorage(AppTemperature.preferenceKey) private var temperatureUnit: AppTemperature = .celsius
+    
     let weatherData: WeatherData
         
     private let screenWidth = UIScreen.main.bounds.width
@@ -40,7 +42,7 @@ struct WeatherDetailLargeView: View {
                 Text("\(weatherData.name), \(weatherData.sys.country)")
                     .font(.largeTitle)
                 
-                Text("\(weatherData.main.intTemp)°")
+                Text(weatherData.main.temp.formatTemperatureWith(unit: .celsius, useFractionDigits: false, convertTo: temperatureUnit == .fahrenheit ? .fahrenheit : nil))
                     .font(.system(size: 80))
                     .fontWeight(.semibold)
                     .fontDesign(.rounded)
@@ -49,10 +51,10 @@ struct WeatherDetailLargeView: View {
                     Text(weatherData.weather[0].description.capitalizedSentence)
                     HStack {
                         Text(WeatherDetailView.max) +
-                        Text(": \(weatherData.main.intTempMax)°")
+                        Text(": \(weatherData.main.tempMax.formatTemperatureWith(unit: .celsius, useFractionDigits: false, convertTo: temperatureUnit == .fahrenheit ? .fahrenheit : nil))")
                         
                         Text(WeatherDetailView.min) +
-                        Text(": \(weatherData.main.intTempMin)°")
+                        Text(": \(weatherData.main.tempMin.formatTemperatureWith(unit: .celsius, useFractionDigits: false, convertTo: temperatureUnit == .fahrenheit ? .fahrenheit : nil))")
                     }
                 }
                 .font(.title2)

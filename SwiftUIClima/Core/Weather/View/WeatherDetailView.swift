@@ -12,6 +12,8 @@ struct WeatherDetailView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
+    @AppStorage(AppTemperature.preferenceKey) private var temperatureUnit: AppTemperature = .celsius
+    
     @EnvironmentObject var viewModel: WeatherViewModel
     
     // Light Mode
@@ -48,14 +50,15 @@ struct WeatherDetailView: View {
                     if let weatherData = viewModel.weatherData {
                         
                         ZStack(alignment: .topTrailing) {
-                            
-                            // Button to refresh location and weather data
-                            Button {
-                                LocationManager.shared.fetchLocation()
-                            } label: {
-                                Image(systemName: "arrow.clockwise")
-                                    .imageScale(.large)
-                                    .foregroundColor(.white)
+
+                            HStack(spacing: 16) {
+                                
+                                // Button to refresh data
+                                refreshButton
+                                
+                                // Button to show context menu
+                                contextMenuButton
+                                
                             }
                             .padding()
                             
@@ -114,6 +117,33 @@ struct WeatherDetailView: View {
             }
             
         }
+    }
+    
+    var refreshButton: some View {
+        Button {
+            LocationManager.shared.fetchLocation()
+        } label: {
+            Image(systemName: "arrow.clockwise")
+                .imageScale(.large)
+                .foregroundColor(.white)
+        }
+    }
+    
+    var contextMenuButton: some View {
+        Menu {
+            ForEach(AppTemperature.allCases, id: \.hashValue) { temperatureUnit in
+                Button {
+                    self.temperatureUnit = temperatureUnit
+                } label: {
+                    TemperatureContextMenuLabelView(isSelected: self.temperatureUnit == temperatureUnit, temperatureUnit: temperatureUnit)
+                }
+            }
+        } label: {
+            Image(systemName: "ellipsis.circle")
+                .imageScale(.large)
+                .foregroundColor(.white)
+        }
+
     }
     
 }

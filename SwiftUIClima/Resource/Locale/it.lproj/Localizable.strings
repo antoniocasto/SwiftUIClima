@@ -21,7 +21,7 @@
 
 /* AppTemperature */
 "AppTemperature.celsiusTemp" = "Celsius";
-"AppTemperature.fahrenheitTemp" = "Fahrenheit"
+"AppTemperature.fahrenheitTemp" = "Fahrenheit";
 
 /* ContentView */
 "ContentView.locations" = "Luoghi";

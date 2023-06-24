@@ -9,6 +9,8 @@ import SwiftUI
 
 struct WeatherDetailGridView: View {
     
+    @AppStorage(AppTemperature.preferenceKey) private var temperatureUnit: AppTemperature = .celsius
+    
     let weatherData: WeatherData
     
     var columns: [GridItem] = [.init(.flexible(), spacing: 16), .init(.flexible(), spacing: 16)]
@@ -19,7 +21,7 @@ struct WeatherDetailGridView: View {
             CardView(title: WeatherDetailGridView.sunrise, systemIcon: "sunrise", value: weatherData.sys.sunrise24H)
             CardView(title: WeatherDetailGridView.sunset, systemIcon: "sunset", value: weatherData.sys.sunset24H)
             CardView(title: WeatherDetailGridView.wind, systemIcon: "wind", value: weatherData.wind.speed.formatSpeedWith(unit: .metersPerSecond, useFractionDigits: false))
-            CardView(title: WeatherDetailGridView.feelsLike, systemIcon: "thermometer.sun", value: "\(weatherData.main.intFeelsLike)°")
+            CardView(title: WeatherDetailGridView.feelsLike, systemIcon: "thermometer.sun", value: "\(weatherData.main.feelsLike.formatTemperatureWith(unit: .celsius, useFractionDigits: false, convertTo: temperatureUnit == .fahrenheit ? .fahrenheit : nil))")
             CardView(title: WeatherDetailGridView.humidity, systemIcon: "humidity", value: weatherData.main.humidity.formatted(.percent))
             CardView(title: WeatherDetailGridView.visibility, systemIcon: "eye.fill", value: (Double(weatherData.visibility)).formatLenghtWith(unit: .meters, convertTo: .kilometers))
         }

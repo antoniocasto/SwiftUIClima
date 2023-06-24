@@ -26,6 +26,16 @@ enum AppTemperature: Int, CaseIterable {
         }
     }
     
+    // Returns the actual temperature symbol
+    var symbol: String {
+        switch self {
+        case .celsius:
+            return "°C"
+        case .fahrenheit:
+            return "°F"
+        }
+    }
+    
     // Temperature full name
     var temperatureName: LocalizedStringKey {
         switch self {
