@@ -19,6 +19,10 @@
 "AppLocale.itLocale" = "Italiano";
 "AppLocale.systemLocale" = "Sistema";
 
+/* AppTemperature */
+"AppTemperature.celsiusTemp" = "Celsius";
+"AppTemperature.fahrenheitTemp" = "Fahrenheit"
+
 /* ContentView */
 "ContentView.locations" = "Luoghi";
 "ContentView.weather" = "Meteo";

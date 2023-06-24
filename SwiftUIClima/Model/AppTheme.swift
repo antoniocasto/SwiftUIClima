@@ -9,7 +9,7 @@ import SwiftUI
 
 /// Enum used to select the app theme.
 enum AppTheme: Int, CaseIterable {
-    
+        
     case light
     case dark
     case system
