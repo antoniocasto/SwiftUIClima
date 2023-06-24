@@ -99,7 +99,7 @@ struct WeatherData: Decodable {
     struct Wind: Decodable {
         
         // Wind speed
-        let speed: Float
+        let speed: Double
         
     }
     

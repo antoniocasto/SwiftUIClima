@@ -18,10 +18,10 @@ struct WeatherDetailGridView: View {
         LazyVGrid(columns: columns, spacing: 16) {
             CardView(title: WeatherDetailGridView.sunrise, systemIcon: "sunrise", value: weatherData.sys.sunrise24H)
             CardView(title: WeatherDetailGridView.sunset, systemIcon: "sunset", value: weatherData.sys.sunset24H)
-            CardView(title: WeatherDetailGridView.wind, systemIcon: "wind", value: "\(Int(weatherData.wind.speed.rounded())) km/h")
+            CardView(title: WeatherDetailGridView.wind, systemIcon: "wind", value: weatherData.wind.speed.formatSpeedWith(unit: .metersPerSecond, useFractionDigits: false))
             CardView(title: WeatherDetailGridView.feelsLike, systemIcon: "thermometer.sun", value: "\(weatherData.main.intFeelsLike)°")
-            CardView(title: WeatherDetailGridView.humidity, systemIcon: "humidity", value: "\(weatherData.main.humidity)%")
-            CardView(title: WeatherDetailGridView.visibility, systemIcon: "eye.fill", value: "\(weatherData.visibility / 1000) km")
+            CardView(title: WeatherDetailGridView.humidity, systemIcon: "humidity", value: weatherData.main.humidity.formatted(.percent))
+            CardView(title: WeatherDetailGridView.visibility, systemIcon: "eye.fill", value: (Double(weatherData.visibility)).formatLenghtWith(unit: .meters, convertTo: .kilometers))
         }
         
     }
