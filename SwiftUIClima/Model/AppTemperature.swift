@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Enum used to select the app temperature unit measure.
-enum AppTemperature: Int, CaseIterable {
+enum AppTemperature: Int, CaseIterable, Hashable {
     
     case celsius
     case fahrenheit
