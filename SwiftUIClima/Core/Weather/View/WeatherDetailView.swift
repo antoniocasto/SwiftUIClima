@@ -144,6 +144,14 @@ struct WeatherDetailView: View {
         
     }
     
+    var favoriteButton: some View {
+        Button {
+            // Add/remove location to favorites
+        } label: {
+            Image(systemName: "heart")
+        }
+    }
+    
     var refreshButton: some View {
         Button {
             if !viewModel.isSearchedLocation {

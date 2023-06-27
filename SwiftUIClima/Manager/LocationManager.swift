@@ -18,7 +18,7 @@ final class LocationManager: NSObject, ObservableObject {
     
     static let shared = LocationManager()
     
-    override init() {
+    private override init() {
         super.init()
         
         // Set delegate and reduced accuracy

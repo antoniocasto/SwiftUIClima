@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Label used for searched places in LocationsView.
 struct SearchResultLabelView: View {
     
     let title: String

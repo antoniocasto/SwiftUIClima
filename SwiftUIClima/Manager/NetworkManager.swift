@@ -17,7 +17,7 @@ final class NetworkManager: ObservableObject {
     
     @Published var isConnected = true
     
-    init() {
+    private init() {
         
         monitor.pathUpdateHandler = { path in
             DispatchQueue.main.async {
