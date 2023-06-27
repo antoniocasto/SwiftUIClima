@@ -50,17 +50,6 @@ struct WeatherDetailView: View {
                     if let weatherData = viewModel.weatherData {
                         
                         ZStack(alignment: .topTrailing) {
-
-                            HStack(spacing: 16) {
-                                
-                                // Button to refresh data
-                                refreshButton
-                                
-                                // Button to show context menu
-                                contextMenuButton
-                                
-                            }
-                            .padding()
                             
                             VStack {
                                 
@@ -73,7 +62,6 @@ struct WeatherDetailView: View {
                                     
                                     WeatherDetailSmallView(weatherData: weatherData)
                                         .transition(.move(edge: .bottom).combined(with: .opacity))
-                                        .padding(.top, 32)
                                     
                                 }
                                 
@@ -112,6 +100,23 @@ struct WeatherDetailView: View {
                     OfflineAlertView()
                         .transition(.move(edge: .top))
                         .zIndex(100)
+                }
+                
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    
+                    // Button to refresh data
+                    refreshButton
+                    
+                    
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    
+                    // Button to show context menu
+                    contextMenuButton
+                    
                 }
                 
             }
