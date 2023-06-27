@@ -6,13 +6,33 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct WeatherView: View {
     
-    @StateObject var viewModel = WeatherViewModel()
+    @StateObject var viewModel: WeatherViewModel
+        
+    init(location: CLLocationCoordinate2D? = nil) {
+        _viewModel = StateObject(wrappedValue: WeatherViewModel(coordinates: location))
+    }
     
     var body: some View {
         
+        Group {
+            if viewModel.isSearchedLocation {
+                content
+                    .navigationBarTitleDisplayMode(.inline)
+            } else {
+                NavigationStack {
+                    content
+                }
+            }
+        }
+        
+        
+    }
+    
+    var content: some View {
         ZStack {
             
             if viewModel.authStatus == .denied || viewModel.authStatus == .restricted {
@@ -40,7 +60,6 @@ struct WeatherView: View {
             }
             
         }
-        
     }
     
 }

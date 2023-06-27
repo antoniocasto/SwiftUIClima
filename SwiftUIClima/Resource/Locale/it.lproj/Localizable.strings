@@ -54,7 +54,9 @@
 "OfflineAlertView.offlineTitle" = "Sei offline.";
 "OfflineAlertView.offlineMessage" = "Abilita la connessione ad internet se è disattivata.";
 
-
+/* LocationsView */
+"LocationsView.searchPrompt" = "Cerca un luogo...";
+"LocationsView.navTitle" = "Luoghi";
 
 
 

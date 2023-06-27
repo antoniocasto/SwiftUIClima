@@ -11,6 +11,7 @@ import SwiftUI
 struct WeatherDetailView: View {
     
     @Environment(\.colorScheme) var colorScheme
+    @Environment(\.dismiss) var dismiss
     
     @AppStorage(AppTemperature.preferenceKey) private var temperatureUnit: AppTemperature = .celsius
     
@@ -41,92 +42,113 @@ struct WeatherDetailView: View {
     
     var body: some View {
         
-        NavigationStack {
+        
+        ZStack(alignment: .top) {
             
-            ZStack(alignment: .top) {
+            Group {
                 
-                Group {
+                if let weatherData = viewModel.weatherData {
                     
-                    if let weatherData = viewModel.weatherData {
+                    ZStack(alignment: .topTrailing) {
                         
-                        ZStack(alignment: .topTrailing) {
+                        VStack {
                             
-                            VStack {
+                            if viewModel.bottomSheetScaleFactor == .large {
                                 
-                                if viewModel.bottomSheetScaleFactor == .large {
-                                    
-                                    WeatherDetailLargeView(weatherData: weatherData)
-                                        .transition(.move(edge: .top).combined(with: .opacity))
-                                    
-                                } else {
-                                    
-                                    WeatherDetailSmallView(weatherData: weatherData)
-                                        .transition(.move(edge: .bottom).combined(with: .opacity))
-                                    
-                                }
+                                WeatherDetailLargeView(weatherData: weatherData)
+                                    .transition(.move(edge: .top).combined(with: .opacity))
                                 
-                            }
-                            .frame(maxWidth: .infinity)
-                            .animation(.easeInOut(duration: 0.3), value: viewModel.bottomSheetScaleFactor)
-                            
-                            // Bottom Sheet
-                            BottomSheetView(scaleFactor: $viewModel.bottomSheetScaleFactor) {
+                            } else {
                                 
-                                // Grid for weather details
-                                WeatherDetailGridView(weatherData: weatherData)
-                                    .padding(.horizontal)
+                                WeatherDetailSmallView(weatherData: weatherData)
+                                    .transition(.move(edge: .bottom).combined(with: .opacity))
                                 
                             }
                             
                         }
+                        .frame(maxWidth: .infinity)
+                        .animation(.easeInOut(duration: 0.3), value: viewModel.bottomSheetScaleFactor)
                         
-                        
-                    } else {
-                        
-                        // ProgressView shown when fetching data
-                        ProgressView {
-                            Label(WeatherDetailView.fetchingWeather, systemImage: "icloud.and.arrow.down.fill")
+                        // Bottom Sheet
+                        BottomSheetView(scaleFactor: $viewModel.bottomSheetScaleFactor) {
+                            
+                            // Grid for weather details
+                            WeatherDetailGridView(weatherData: weatherData)
+                                .padding(.horizontal)
+                            
                         }
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
                         
                     }
+                    
+                    
+                } else {
+                    
+                    // ProgressView shown when fetching data
+                    ProgressView {
+                        Label(WeatherDetailView.fetchingWeather, systemImage: "icloud.and.arrow.down.fill")
+                    }
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    
                 }
-                .background(
-                    gradient
-                )
+            }
+            .background(
+                gradient
+            )
+            
+            if !viewModel.isConnected {
+                // Alert appearing when device is offline
+                OfflineAlertView()
+                    .transition(.move(edge: .top))
+                    .zIndex(100)
+            }
+            
+        }
+        .navigationBarBackButtonHidden(true)
+        .toolbar {
+            
+            if viewModel.isSearchedLocation {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    // Back button
+                    backButton
+                }
+            }
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
                 
-                if !viewModel.isConnected {
-                    // Alert appearing when device is offline
-                    OfflineAlertView()
-                        .transition(.move(edge: .top))
-                        .zIndex(100)
-                }
+                // Button to refresh data
+                refreshButton
+                
                 
             }
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    
-                    // Button to refresh data
-                    refreshButton
-                    
-                    
-                }
+            
+            ToolbarItem(placement: .navigationBarTrailing) {
                 
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    
-                    // Button to show context menu
-                    contextMenuButton
-                    
-                }
+                // Button to show context menu
+                contextMenuButton
                 
             }
             
         }
+        
+    }
+    
+    var backButton: some View {
+        Button {
+            // Go back
+            dismiss()
+        } label: {
+            Image(systemName: "chevron.left")
+                .fontWeight(.semibold)
+                .foregroundColor(.white)
+        }
+        
     }
     
     var refreshButton: some View {
         Button {
-            LocationManager.shared.fetchLocation()
+            if !viewModel.isSearchedLocation {
+                LocationManager.shared.fetchLocation()
+            }
         } label: {
             Image(systemName: "arrow.clockwise")
                 .imageScale(.large)
@@ -148,7 +170,7 @@ struct WeatherDetailView: View {
                 .imageScale(.large)
                 .foregroundColor(.white)
         }
-
+        
     }
     
 }

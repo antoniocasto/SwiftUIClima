@@ -30,6 +30,8 @@ final class WeatherViewModel: ObservableObject {
         }
     }
     
+    private(set) var isSearchedLocation: Bool = false
+    
     @Published var authStatus: CLAuthorizationStatus = .authorizedWhenInUse
     
     // Internet status
@@ -42,8 +44,18 @@ final class WeatherViewModel: ObservableObject {
     // Bottom Sheet
     @Published var bottomSheetScaleFactor: BottomSheetScaleFactor = .large
     
-    init() {
-        setupSubscribers()
+    init(coordinates: CLLocationCoordinate2D? = nil) {
+        
+        if let coordinates = coordinates {
+            // Used geocoding to obtain coordinates
+            setNetworkManagerSubscriber()
+            location = coordinates
+            isSearchedLocation = true
+        } else {
+            // Use local coordinates
+            setupSubscribers()
+        }
+
     }
     
     /// Fetches weather data by coordinate.
@@ -70,6 +82,27 @@ final class WeatherViewModel: ObservableObject {
     
     private func setupSubscribers() {
         
+        setLocationManagerSubscriber()
+        
+        setNetworkManagerSubscriber()
+        
+    }
+    
+    private func setNetworkManagerSubscriber() {
+        
+        networkManager.$isConnected.sink { [weak self] isConnected in
+            
+            withAnimation(.easeInOut(duration: 0.3)) {
+                self?.isConnected = isConnected
+            }
+            
+        }
+        .store(in: &cancellables)
+        
+    }
+    
+    private func setLocationManagerSubscriber() {
+        
         locationManager.$userLocation.sink { [weak self] location in
             
             self?.location = location?.coordinate
@@ -83,16 +116,6 @@ final class WeatherViewModel: ObservableObject {
             
         }
         .store(in: &cancellables)
-        
-        networkManager.$isConnected.sink { [weak self] isConnected in
-            
-            withAnimation(.easeInOut(duration: 0.3)) {
-                self?.isConnected = isConnected
-            }
-            
-        }
-        .store(in: &cancellables)
-        
     }
     
 }

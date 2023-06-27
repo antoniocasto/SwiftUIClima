@@ -50,3 +50,7 @@
 /* OfflineAlertView */
 "OfflineAlertView.offlineTitle" = "You are offline.";
 "OfflineAlertView.offlineMessage" = "Enable your internet connection if it's disabled.";
+
+/* LocationsView */
+"LocationsView.searchPrompt" = "Search for a location...";
+"LocationsView.navTitle" = "Locations";

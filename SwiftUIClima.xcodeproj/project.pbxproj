@@ -34,6 +34,10 @@
 		B05822C72A2F45BD00C9F7B1 /* day-shower-rains.json in Resources */ = {isa = PBXBuildFile; fileRef = B05822B52A2F45BD00C9F7B1 /* day-shower-rains.json */; };
 		B05822C82A2F45BD00C9F7B1 /* day-clear-sky.json in Resources */ = {isa = PBXBuildFile; fileRef = B05822B62A2F45BD00C9F7B1 /* day-clear-sky.json */; };
 		B05822C92A2F45BD00C9F7B1 /* night-scattered-clouds.json in Resources */ = {isa = PBXBuildFile; fileRef = B05822B72A2F45BD00C9F7B1 /* night-scattered-clouds.json */; };
+		B067F27D2A4ABFA2001C1715 /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B067F27C2A4ABFA2001C1715 /* LocationsViewModel.swift */; };
+		B067F27F2A4AC4F7001C1715 /* AddressResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = B067F27E2A4AC4F7001C1715 /* AddressResult.swift */; };
+		B067F2812A4AD6FE001C1715 /* SearchResultLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B067F2802A4AD6FE001C1715 /* SearchResultLabelView.swift */; };
+		B067F2832A4AE4F3001C1715 /* GeocodingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B067F2822A4AE4F3001C1715 /* GeocodingService.swift */; };
 		B076B3572A27AD7D00FAB35C /* SwiftUIClimaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076B3562A27AD7D00FAB35C /* SwiftUIClimaApp.swift */; };
 		B076B3592A27AD7D00FAB35C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B076B3582A27AD7D00FAB35C /* ContentView.swift */; };
 		B076B35B2A27AD7E00FAB35C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B076B35A2A27AD7E00FAB35C /* Assets.xcassets */; };
@@ -89,6 +93,10 @@
 		B05822B52A2F45BD00C9F7B1 /* day-shower-rains.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "day-shower-rains.json"; sourceTree = "<group>"; };
 		B05822B62A2F45BD00C9F7B1 /* day-clear-sky.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "day-clear-sky.json"; sourceTree = "<group>"; };
 		B05822B72A2F45BD00C9F7B1 /* night-scattered-clouds.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "night-scattered-clouds.json"; sourceTree = "<group>"; };
+		B067F27C2A4ABFA2001C1715 /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
+		B067F27E2A4AC4F7001C1715 /* AddressResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressResult.swift; sourceTree = "<group>"; };
+		B067F2802A4AD6FE001C1715 /* SearchResultLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultLabelView.swift; sourceTree = "<group>"; };
+		B067F2822A4AE4F3001C1715 /* GeocodingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeocodingService.swift; sourceTree = "<group>"; };
 		B076B3532A27AD7D00FAB35C /* SwiftUIClima.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftUIClima.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B076B3562A27AD7D00FAB35C /* SwiftUIClimaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIClimaApp.swift; sourceTree = "<group>"; };
 		B076B3582A27AD7D00FAB35C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -145,6 +153,7 @@
 				B0360DD62A3DD5750060846F /* WeatherDetailLargeView.swift */,
 				B0360DD82A3DE4100060846F /* WeatherDetailSmallView.swift */,
 				B087B1872A46E21100A89EAE /* TemperatureContextMenuLabelView.swift */,
+				B067F2802A4AD6FE001C1715 /* SearchResultLabelView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -192,6 +201,7 @@
 				B0D6AE0C2A2F68C300660195 /* AppTheme.swift */,
 				B087B1852A46DCB300A89EAE /* AppTemperature.swift */,
 				B0DF7D242A33098600821A43 /* WeatherData.swift */,
+				B067F27E2A4AC4F7001C1715 /* AddressResult.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				B0DF7D282A331E2000821A43 /* WeatherDataService.swift */,
+				B067F2822A4AE4F3001C1715 /* GeocodingService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -227,6 +238,22 @@
 				B05822B02A2F45BD00C9F7B1 /* night-mist.json */,
 			);
 			path = Lottie;
+			sourceTree = "<group>";
+		};
+		B067F27A2A4ABF80001C1715 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B067F27C2A4ABFA2001C1715 /* LocationsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		B067F27B2A4ABF85001C1715 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B0D6AE142A2F764200660195 /* LocationsView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B076B34A2A27AD7D00FAB35C = {
@@ -322,7 +349,8 @@
 		B0D6AE112A2F739000660195 /* Locations */ = {
 			isa = PBXGroup;
 			children = (
-				B0D6AE142A2F764200660195 /* LocationsView.swift */,
+				B067F27B2A4ABF85001C1715 /* View */,
+				B067F27A2A4ABF80001C1715 /* ViewModel */,
 			);
 			path = Locations;
 			sourceTree = "<group>";
@@ -472,10 +500,14 @@
 				B087B1862A46DCB300A89EAE /* AppTemperature.swift in Sources */,
 				B0360DD92A3DE4100060846F /* WeatherDetailSmallView.swift in Sources */,
 				B0D6AE152A2F764200660195 /* LocationsView.swift in Sources */,
+				B067F2832A4AE4F3001C1715 /* GeocodingService.swift in Sources */,
 				B087B1822A46CF3E00A89EAE /* DoubleExtension.swift in Sources */,
 				B076B3572A27AD7D00FAB35C /* SwiftUIClimaApp.swift in Sources */,
 				B02278CD2A38732600145CE7 /* WeatherDetailGridView.swift in Sources */,
+				B067F2812A4AD6FE001C1715 /* SearchResultLabelView.swift in Sources */,
 				B0DF7D252A33098600821A43 /* WeatherData.swift in Sources */,
+				B067F27F2A4AC4F7001C1715 /* AddressResult.swift in Sources */,
+				B067F27D2A4ABFA2001C1715 /* LocationsViewModel.swift in Sources */,
 				B0FCEBC22A39BA2300AACDAA /* DateExtension.swift in Sources */,
 				B0360DD52A3D9F5D0060846F /* BottomSheetView.swift in Sources */,
 				B0BE37002A3705CA00F84D1B /* ErrorView.swift in Sources */,

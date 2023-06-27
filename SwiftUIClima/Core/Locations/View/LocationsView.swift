@@ -1,0 +1,57 @@
+//
+//  LocationsView.swift
+//  SwiftUIClima
+//
+//  Created by Antonio Casto on 06/06/23.
+//
+
+import SwiftUI
+import CoreLocation
+
+struct LocationsView: View {
+        
+    @StateObject private var viewModel = LocationsViewModel()
+        
+    var body: some View {
+        NavigationStack {
+            List {
+                ForEach(viewModel.results, id: \.hashValue) { result in
+                    NavigationLink(value: result) {
+                        SearchResultLabelView(title: result.name, subtitle: result.country)
+                    }
+                }
+                
+                Section("Favorites") {
+                    Text("Previously saved location")
+                }
+                
+            }
+            .navigationTitle(Self.navTitle)
+            .navigationDestination(for: AddressResult.self) { result in
+                WeatherView(location: CLLocationCoordinate2D(latitude: result.lat, longitude: result.lon))
+            }
+            .searchable(text: $viewModel.searchText, prompt: Self.searchPrompt)
+            .onChange(of: viewModel.searchText) { newSearch in
+                Task {
+                    await viewModel.fetchCityNames()
+                }
+            }
+        }
+        
+    }
+
+}
+
+
+struct LocationsView_Previews: PreviewProvider {
+    static var previews: some View {
+        LocationsView()
+    }
+}
+
+extension LocationsView {
+    
+    static let navTitle = LocalizedStringKey("LocationsView.navTitle")
+    static let searchPrompt = LocalizedStringKey("LocationsView.searchPrompt")
+    
+}
