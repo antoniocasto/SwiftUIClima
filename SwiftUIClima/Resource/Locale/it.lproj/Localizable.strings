@@ -57,6 +57,8 @@
 /* LocationsView */
 "LocationsView.searchPrompt" = "Cerca un luogo...";
 "LocationsView.navTitle" = "Luoghi";
+"LocationsView.favorites" = "Preferiti";
+
 
 
 

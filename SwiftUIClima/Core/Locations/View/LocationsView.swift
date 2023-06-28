@@ -21,8 +21,10 @@ struct LocationsView: View {
                     }
                 }
                 
-                Section("Favorites") {
-                    Text("Previously saved location")
+                Section(Self.favorites) {
+                    ForEach(viewModel.locations) { location in
+                        Text(location.uName)
+                    }
                 }
                 
             }
@@ -35,6 +37,9 @@ struct LocationsView: View {
                 Task {
                     await viewModel.fetchCityNames()
                 }
+            }
+            .onAppear {
+                viewModel.fetchFavoriteLocations()
             }
         }
         
@@ -53,5 +58,6 @@ extension LocationsView {
     
     static let navTitle = LocalizedStringKey("LocationsView.navTitle")
     static let searchPrompt = LocalizedStringKey("LocationsView.searchPrompt")
+    static let favorites = LocalizedStringKey("LocationsView.favorites")
     
 }

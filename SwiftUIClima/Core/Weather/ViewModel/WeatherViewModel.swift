@@ -95,10 +95,10 @@ final class WeatherViewModel: ObservableObject {
                 
         guard let weatherData = weatherData else { return }
         
-        let res = Location.fetchRequest()
-        res.predicate = NSPredicate(format: "name == %@ AND country == %@", weatherData.name, weatherData.sys.country)
+        let request = Location.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@ AND country == %@", weatherData.name, weatherData.sys.country)
         
-        if let location = try? PersistenceManager.shared.container.viewContext.fetch(res).first {
+        if let _ = try? PersistenceManager.shared.container.viewContext.fetch(request).first {
             
             isFavorite = true
             
@@ -112,6 +112,7 @@ final class WeatherViewModel: ObservableObject {
         guard let weatherData = weatherData else { return }
         
         let location = Location(context: PersistenceManager.shared.container.viewContext)
+        location.id = UUID()
         location.name = weatherData.name
         location.country = weatherData.sys.country
         
@@ -126,10 +127,10 @@ final class WeatherViewModel: ObservableObject {
         
         guard let weatherData = weatherData else { return }
         
-        let res = Location.fetchRequest()
-        res.predicate = NSPredicate(format: "name == %@ AND country == %@", weatherData.name, weatherData.sys.country)
+        let request = Location.fetchRequest()
+        request.predicate = NSPredicate(format: "name == %@ AND country == %@", weatherData.name, weatherData.sys.country)
         
-        guard let location = try? PersistenceManager.shared.container.viewContext.fetch(res).first else { return }
+        guard let location = try? PersistenceManager.shared.container.viewContext.fetch(request).first else { return }
         
         PersistenceManager.shared.container.viewContext.delete(location)
         

@@ -54,3 +54,4 @@
 /* LocationsView */
 "LocationsView.searchPrompt" = "Search for a location...";
 "LocationsView.navTitle" = "Locations";
+"LocationsView.favorites" = "Favorites";
