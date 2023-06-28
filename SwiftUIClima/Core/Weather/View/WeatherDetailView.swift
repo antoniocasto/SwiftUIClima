@@ -17,26 +17,12 @@ struct WeatherDetailView: View {
     
     @EnvironmentObject var viewModel: WeatherViewModel
     
-    // Light Mode
-    let lightGradient = LinearGradient(
-        gradient: Gradient(colors: [Color(hex: 0x87CEEB), .white]),
-        startPoint: .top,
-        endPoint: .bottom
-    )
-    
-    // Dark Mode
-    let darkGradient = LinearGradient(
-        gradient: Gradient(colors: [Color(hex: 0xFF6700), Color(hex: 0x232323)]),
-        startPoint: .top,
-        endPoint: .bottom
-    )
-    
     // Used gradient
     var gradient: LinearGradient {
         if colorScheme == .dark {
-            return darkGradient
+            return Color.darkGradient
         } else {
-            return lightGradient
+            return Color.lightGradient
         }
     }
     

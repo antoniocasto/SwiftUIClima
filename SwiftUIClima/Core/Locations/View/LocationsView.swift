@@ -9,8 +9,19 @@ import SwiftUI
 import CoreLocation
 
 struct LocationsView: View {
+    
+    @Environment(\.colorScheme) var colorScheme
         
     @StateObject private var viewModel = LocationsViewModel()
+    
+    // Used gradient
+    var gradient: LinearGradient {
+        if colorScheme == .dark {
+            return Color.darkGradient
+        } else {
+            return Color.lightGradient
+        }
+    }
         
     var body: some View {
         NavigationStack {
@@ -24,7 +35,7 @@ struct LocationsView: View {
                 Section(Self.favorites) {
                     ForEach(viewModel.locations) { location in
                         FavoriteRowHolderView(location: location)
-                            .background(.regularMaterial)
+                            .background(colorScheme == .dark ? .gray.opacity(0.3) : Color(hex: 0x87CEFA))
                             .overlay(
                                 NavigationLink(value: AddressResult(name: location.uName, country: location.uCountry, lat: location.lat, lon: location.lon)) {
                                     EmptyView()
@@ -33,13 +44,16 @@ struct LocationsView: View {
                             )
                             .listRowInsets(EdgeInsets())
                             .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
                             .cornerRadius(20)
+                            .padding(.vertical, 8)
 
                         
                     }
                 }
                 
             }
+            .background(gradient)
             .scrollContentBackground(.hidden)
             .navigationTitle(Self.navTitle)
             .navigationDestination(for: AddressResult.self) { result in

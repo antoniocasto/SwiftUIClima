@@ -9,6 +9,20 @@ import SwiftUI
 
 extension Color {
     
+    // Light Mode
+    static let lightGradient = LinearGradient(
+        gradient: Gradient(colors: [Color(hex: 0x87CEEB), .white]),
+        startPoint: .top,
+        endPoint: .bottom
+    )
+    
+    // Dark Mode
+    static let darkGradient = LinearGradient(
+        gradient: Gradient(colors: [Color(hex: 0xFF6700), Color(hex: 0x232323)]),
+        startPoint: .top,
+        endPoint: .bottom
+    )
+    
     /// Initializer acceptiong an hex number for color and alpha for transparency.
     init(hex: UInt32, alpha: Double = 1.0) {
         
