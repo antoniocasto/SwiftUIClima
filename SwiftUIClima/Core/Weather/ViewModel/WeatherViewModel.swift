@@ -115,6 +115,8 @@ final class WeatherViewModel: ObservableObject {
         location.id = UUID()
         location.name = weatherData.name
         location.country = weatherData.sys.country
+        location.lon = weatherData.coord.lon
+        location.lat = weatherData.coord.lat
         
         PersistenceManager.shared.save()
         

@@ -23,11 +23,24 @@ struct LocationsView: View {
                 
                 Section(Self.favorites) {
                     ForEach(viewModel.locations) { location in
-                        Text(location.uName)
+                        FavoriteRowHolderView(location: location)
+                            .background(.regularMaterial)
+                            .overlay(
+                                NavigationLink(value: AddressResult(name: location.uName, country: location.uCountry, lat: location.lat, lon: location.lon)) {
+                                    EmptyView()
+                                }
+                                    .opacity(0)
+                            )
+                            .listRowInsets(EdgeInsets())
+                            .listRowBackground(Color.clear)
+                            .cornerRadius(20)
+
+                        
                     }
                 }
                 
             }
+            .scrollContentBackground(.hidden)
             .navigationTitle(Self.navTitle)
             .navigationDestination(for: AddressResult.self) { result in
                 WeatherView(location: CLLocationCoordinate2D(latitude: result.lat, longitude: result.lon))

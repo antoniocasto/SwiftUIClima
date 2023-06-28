@@ -2,7 +2,7 @@
 //  Location+CoreDataProperties.swift
 //  SwiftUIClima
 //
-//  Created by Antonio Casto on 27/06/23.
+//  Created by Antonio Casto on 28/06/23.
 //
 //
 
@@ -16,13 +16,16 @@ extension Location {
         return NSFetchRequest<Location>(entityName: "Location")
     }
 
+    @NSManaged public var country: String?
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
-    @NSManaged public var country: String?
+    @NSManaged public var lat: Double
+    @NSManaged public var lon: Double
 
 }
 
 extension Location : Identifiable {
+    
     var uId: UUID {
         id ?? UUID()
     }
@@ -34,4 +37,5 @@ extension Location : Identifiable {
     var uCountry: String {
         country ?? "Unknown Country"
     }
+
 }

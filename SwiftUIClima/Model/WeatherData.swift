@@ -10,12 +10,18 @@ import SwiftUI
 /// Weather Model for data fetched from openweathermap.org
 struct WeatherData: Decodable {
     
+    let coord: Coordinates
     let weather: [Weather]
     let main: Main
     let visibility: Int
     let wind: Wind
     let sys: Sys
     let name: String
+    
+    struct Coordinates: Decodable {
+        let lon: Double
+        let lat: Double
+    }
     
     struct Weather: Decodable {
         
