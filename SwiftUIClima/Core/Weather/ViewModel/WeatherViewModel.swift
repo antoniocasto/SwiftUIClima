@@ -38,8 +38,18 @@ final class WeatherViewModel: ObservableObject {
     @Published var isConnected = true
     
     // Weather data
-    @Published var weatherData: WeatherData?
+    @Published var weatherData: WeatherData? {
+        didSet {
+            guard let _ = weatherData else { return }
+            if isSearchedLocation {
+                setLocationFavorite()
+            }
+        }
+    }
     @Published var weatherFetchError = false
+    
+    // Favorite
+    @Published var isFavorite = false
     
     // Bottom Sheet
     @Published var bottomSheetScaleFactor: BottomSheetScaleFactor = .large
@@ -77,6 +87,55 @@ final class WeatherViewModel: ObservableObject {
             weatherFetchError = true
             
         }
+        
+    }
+    
+    /// This method checks if location has been added to favorites.
+    private func setLocationFavorite() {
+                
+        guard let weatherData = weatherData else { return }
+        
+        let res = Location.fetchRequest()
+        res.predicate = NSPredicate(format: "name == %@ AND country == %@", weatherData.name, weatherData.sys.country)
+        
+        if let location = try? PersistenceManager.shared.container.viewContext.fetch(res).first {
+            
+            isFavorite = true
+            
+        }
+        
+    }
+    
+    /// This method adds current location to favorites.
+    func addLocationToFavorites() {
+        
+        guard let weatherData = weatherData else { return }
+        
+        let location = Location(context: PersistenceManager.shared.container.viewContext)
+        location.name = weatherData.name
+        location.country = weatherData.sys.country
+        
+        PersistenceManager.shared.save()
+        
+        isFavorite = true
+                
+    }
+    
+    /// This method removes current location to favorites.
+    func removeLocationFromFavorites() {
+        
+        guard let weatherData = weatherData else { return }
+        
+        let res = Location.fetchRequest()
+        res.predicate = NSPredicate(format: "name == %@ AND country == %@", weatherData.name, weatherData.sys.country)
+        
+        guard let location = try? PersistenceManager.shared.container.viewContext.fetch(res).first else { return }
+        
+        PersistenceManager.shared.container.viewContext.delete(location)
+        
+        PersistenceManager.shared.save()
+        
+        isFavorite = false
         
     }
     

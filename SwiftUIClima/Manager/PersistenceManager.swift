@@ -19,6 +19,9 @@ class PersistenceManager: ObservableObject {
         
         container = NSPersistentContainer(name: "LocationsPersistence")
         
+        // Merge object with same constraint values
+        container.viewContext.mergePolicy = NSMergePolicy(merge: .mergeByPropertyObjectTrumpMergePolicyType)
+        
         container.loadPersistentStores { description, error in
             
             // Print error - if any - when loading persistent stores

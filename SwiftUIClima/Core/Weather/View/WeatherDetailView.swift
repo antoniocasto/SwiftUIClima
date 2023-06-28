@@ -105,29 +105,31 @@ struct WeatherDetailView: View {
         }
         .navigationBarBackButtonHidden(true)
         .toolbar {
-            
-            if viewModel.isSearchedLocation {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    // Back button
-                    backButton
+            if let _ = viewModel.weatherData {
+                if viewModel.isSearchedLocation {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        // Back button
+                        backButton
+                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    // Button to refresh data
+                    refreshButton
+                }
+                
+                if viewModel.isSearchedLocation {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        // Button to set/unset favorite
+                        favoriteButton
+                    }
+                }
+                
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    // Button to show context menu
+                    contextMenuButton
                 }
             }
-            
-            ToolbarItem(placement: .navigationBarTrailing) {
-                
-                // Button to refresh data
-                refreshButton
-                
-                
-            }
-            
-            ToolbarItem(placement: .navigationBarTrailing) {
-                
-                // Button to show context menu
-                contextMenuButton
-                
-            }
-            
         }
         
     }
@@ -147,8 +149,14 @@ struct WeatherDetailView: View {
     var favoriteButton: some View {
         Button {
             // Add/remove location to favorites
+            if !viewModel.isFavorite {
+                viewModel.addLocationToFavorites()
+            } else {
+                viewModel.removeLocationFromFavorites()
+            }
         } label: {
-            Image(systemName: "heart")
+            Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
+                .foregroundColor(.white)
         }
     }
     

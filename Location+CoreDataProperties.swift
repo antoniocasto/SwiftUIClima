@@ -18,12 +18,11 @@ extension Location {
 
     @NSManaged public var id: UUID?
     @NSManaged public var name: String?
-    @NSManaged public var contry: String?
+    @NSManaged public var country: String?
 
 }
 
 extension Location : Identifiable {
-
     var uId: UUID {
         id ?? UUID()
     }
@@ -33,7 +32,6 @@ extension Location : Identifiable {
     }
     
     var uCountry: String {
-        contry ?? "Unknown Country"
+        country ?? "Unknown Country"
     }
-    
 }
