@@ -20,7 +20,9 @@ struct GeocodingService {
         // Get API KEY from Config.xcconfig file
         let apiKey = EnvironmentVariable.getApiKey()
         
-        let input = text.replacingOccurrences(of: " ", with: "%20")
+        let input = text
+            .replacingOccurrences(of: " ", with: "%20")
+            .folding(options: .diacriticInsensitive, locale: .current)
         
         guard let url = URL(string: "\(baseUrl)?q=\(input)&limit=1&appid=\(apiKey)") else {
             fatalError("API URL creation failed.")
