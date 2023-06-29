@@ -39,8 +39,9 @@ struct WeatherDetailSmallView: View {
                 }
                 
                 VStack(alignment: .leading) {
-                    Text("\(weatherData.name), \(weatherData.sys.country)")
+                    Text(weatherData.name)
                         .font(.title2)
+                        .lineLimit(1)
 
                     
                     
@@ -53,7 +54,7 @@ struct WeatherDetailSmallView: View {
                 Spacer()
                 
                 Text(weatherData.main.temp.formatTemperatureWith(unit: .celsius, useFractionDigits: false, convertTo: temperatureUnit == .fahrenheit ? .fahrenheit : nil))
-                    .font(.largeTitle)
+                    .font(.title)
                     .fontWeight(.semibold)
                     .fontDesign(.rounded)
                     .foregroundColor(.white)
