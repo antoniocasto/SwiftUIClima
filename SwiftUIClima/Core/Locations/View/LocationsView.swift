@@ -59,9 +59,12 @@ struct LocationsView: View {
                     
                     List {
                         
-                        Section(!viewModel.locations.isEmpty ? Self.favorites : "") {
+                        Section{
                             // Favorite locations
                             favoriteLocations
+                        } header: {
+                            Text(!viewModel.locations.isEmpty ? Self.favorites : "")
+                                .foregroundStyle(.secondary)
                         }
                         .listRowInsets(EdgeInsets())
                         .listRowBackground(Color.clear)
