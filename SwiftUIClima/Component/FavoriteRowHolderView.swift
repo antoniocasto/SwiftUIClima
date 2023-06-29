@@ -33,7 +33,9 @@ struct FavoriteRowHolderView: View {
                 if let weather = try? await WeatherDataService.fetchWeatherDataByCoordinate(CLLocationCoordinate2D(latitude: location.lat, longitude: location.lon), locale: appLocale == .system ? SystemSettings.getSystemLocale() : appLocale.rawValue) {
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        self.weatherData = weather
+                        withAnimation {
+                            self.weatherData = weather
+                        }
                     }
                     
                 }
