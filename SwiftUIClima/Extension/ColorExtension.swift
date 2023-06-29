@@ -8,13 +8,14 @@
 import SwiftUI
 
 extension Color {
-    
+        
     // Light Mode
     static let lightGradient = LinearGradient(
         gradient: Gradient(colors: [Color(hex: 0x87CEEB), .white]),
         startPoint: .top,
         endPoint: .bottom
     )
+    static let colorOnLightGradient = Color(hex: 0x87CEFA)
     
     // Dark Mode
     static let darkGradient = LinearGradient(
@@ -22,6 +23,8 @@ extension Color {
         startPoint: .top,
         endPoint: .bottom
     )
+    static let colorOnDarkGradient = Color.gray.opacity(0.3)
+    
     
     /// Initializer acceptiong an hex number for color and alpha for transparency.
     init(hex: UInt32, alpha: Double = 1.0) {

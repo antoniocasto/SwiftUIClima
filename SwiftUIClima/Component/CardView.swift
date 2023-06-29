@@ -37,10 +37,10 @@ struct CardView: View {
             Group {
                 if colorScheme == .dark {
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .foregroundStyle(.ultraThinMaterial)
+                        .foregroundStyle(Color.colorOnDarkGradient)
                 } else {
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .foregroundStyle(Color(hex: 0x87CEFA))
+                        .foregroundStyle(Color.colorOnLightGradient)
                 }
             }
             

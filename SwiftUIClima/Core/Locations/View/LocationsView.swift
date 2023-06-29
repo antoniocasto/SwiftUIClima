@@ -39,6 +39,7 @@ struct LocationsView: View {
                 }
                 
                 ZStack {
+                    
                     List {
                         
                         Section(!viewModel.locations.isEmpty ? Self.favorites : "") {
@@ -88,7 +89,7 @@ struct LocationsView: View {
     var favoriteLocations: some View {
         ForEach(viewModel.locations) { location in
             FavoriteRowHolderView(location: location)
-                .background(colorScheme == .dark ? .gray.opacity(0.3) : Color(hex: 0x87CEFA))
+                .background(colorScheme == .dark ? Color.colorOnDarkGradient : Color.colorOnLightGradient)
                 .overlay(
                     NavigationLink(value: AddressResult(name: location.uName, country: location.uCountry, lat: location.lat, lon: location.lon)) {
                         EmptyView()
