@@ -14,6 +14,7 @@ struct OfflineAlertView: View {
                 .fontWeight(.semibold)
             Text(OfflineAlertView.offlineMessage)
         }
+        .padding(.horizontal)
         .multilineTextAlignment(.center)
         .foregroundColor(.white)
         .frame(maxWidth: .infinity)

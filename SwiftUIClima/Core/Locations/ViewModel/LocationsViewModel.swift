@@ -6,9 +6,16 @@
 //
 
 import SwiftUI
+import Combine
 
 /// ViewModel for LocationsView.
 final class LocationsViewModel: NSObject, ObservableObject {
+    
+    private let networkManager = NetworkManager.shared
+    private var cancellables = Set<AnyCancellable>()
+    
+    // Internet status
+    @Published private(set) var isConnected = true
     
     // Favorite Locations
     @Published var locations = [Location]()
@@ -26,6 +33,11 @@ final class LocationsViewModel: NSObject, ObservableObject {
     }
     // Error handling
     @Published var cityNamesFetchError = false
+    
+    override init() {
+        super.init()
+        setNetworkManagerSubscriber()
+    }
     
     /// Delete favorite locations included in the IndexSet.
     func deleteFavoriteLocations(indexSet: IndexSet) {
@@ -68,6 +80,19 @@ final class LocationsViewModel: NSObject, ObservableObject {
         } catch {
             cityNamesFetchError = true
         }
+        
+    }
+    
+    private func setNetworkManagerSubscriber() {
+        
+        networkManager.$isConnected.sink { [weak self] isConnected in
+            
+            withAnimation(.easeInOut(duration: 0.3)) {
+                self?.isConnected = isConnected
+            }
+            
+        }
+        .store(in: &cancellables)
         
     }
     

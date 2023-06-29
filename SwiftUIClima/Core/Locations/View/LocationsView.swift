@@ -24,6 +24,23 @@ struct LocationsView: View {
     }
     
     var body: some View {
+        
+        if !viewModel.isConnected {
+            
+            MessageView(title: WeatherView.connectionErrorTitle, description: WeatherView.connectionErrorDescription, actionDescription: WeatherView.connectionActionDescription, systemIcon: ErrorType.connectionNotAvailable.icon, action: SystemSettings.openSettings)
+                .onDisappear {
+                    viewModel.fetchFavoriteLocations()
+                }
+            
+        } else {
+            
+            content
+            
+        }
+        
+    }
+    
+    var content: some View {
         NavigationStack {
             VStack {
                 
@@ -72,7 +89,7 @@ struct LocationsView: View {
                 viewModel.fetchFavoriteLocations()
             }
         }
-        
+
     }
     
     var searchResults: some View {

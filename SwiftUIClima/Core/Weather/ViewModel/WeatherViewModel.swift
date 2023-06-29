@@ -35,7 +35,7 @@ final class WeatherViewModel: ObservableObject {
     @Published var authStatus: CLAuthorizationStatus = .authorizedWhenInUse
     
     // Internet status
-    @Published var isConnected = true
+    @Published private(set) var isConnected = true
     
     // Weather data
     @Published var weatherData: WeatherData? {
