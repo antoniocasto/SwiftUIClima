@@ -37,13 +37,13 @@ struct WeatherView: View {
             
             if viewModel.authStatus == .denied || viewModel.authStatus == .restricted {
                 
-                ErrorView(title: WeatherView.locationErrorTitle, description: WeatherView.locationErrorDescription, actionDescription: WeatherView.locationActionDescription, systemIcon: ErrorType.locationNotAvailable.icon, action: SystemSettings.openSettings)
+                MessageView(title: WeatherView.locationErrorTitle, description: WeatherView.locationErrorDescription, actionDescription: WeatherView.locationActionDescription, systemIcon: ErrorType.locationNotAvailable.icon, action: SystemSettings.openSettings)
                 
             } else {
                 
                 if !viewModel.isConnected && viewModel.weatherData == nil {
                     
-                    ErrorView(title: WeatherView.connectionErrorTitle, description: WeatherView.connectionErrorDescription, actionDescription: WeatherView.connectionActionDescription, systemIcon: ErrorType.connectionNotAvailable.icon, action: SystemSettings.openSettings)
+                    MessageView(title: WeatherView.connectionErrorTitle, description: WeatherView.connectionErrorDescription, actionDescription: WeatherView.connectionActionDescription, systemIcon: ErrorType.connectionNotAvailable.icon, action: SystemSettings.openSettings)
                         .onDisappear {
                             Task {
                                 await viewModel.fetchWeatherDataByCoordinate()

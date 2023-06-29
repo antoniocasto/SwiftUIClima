@@ -24,13 +24,14 @@ enum ErrorType {
 }
 
 /// View displaying an error. It accepts a title, a description, an icon and an action function with its description.
-struct ErrorView: View {
+struct MessageView: View {
     
     let title: LocalizedStringKey
     let description: LocalizedStringKey
-    let actionDescription: LocalizedStringKey
+    var actionDescription: LocalizedStringKey? = nil
     let systemIcon: String
-    let action: () -> Void
+    var iconColor: Color = Color.accentColor
+    var action: (() -> Void)? = nil
     
     var body: some View {
         
@@ -39,7 +40,7 @@ struct ErrorView: View {
             Image(systemName: systemIcon)
                 .font(.largeTitle)
                 .imageScale(.large)
-                .foregroundStyle(Color.accentColor)
+                .foregroundStyle(iconColor)
             
             VStack(spacing: 8) {
                 Text(title)
@@ -50,8 +51,10 @@ struct ErrorView: View {
             }
             .multilineTextAlignment(.center)
             
-            Button(actionDescription) {
-                action()
+            if let action = action, let actionDescription = actionDescription {
+                Button(actionDescription) {
+                    action()
+                }
             }
             
         }
@@ -61,6 +64,6 @@ struct ErrorView: View {
 
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
-        ErrorView(title: "Error", description: "Description of the current error.", actionDescription: "Open Settings", systemIcon: "location.slash.fill", action: {})
+        MessageView(title: "Error", description: "Description of the current error.", actionDescription: "Open Settings", systemIcon: "location.slash.fill")
     }
 }

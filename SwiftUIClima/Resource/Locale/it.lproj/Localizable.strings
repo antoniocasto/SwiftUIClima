@@ -58,6 +58,8 @@
 "LocationsView.searchPrompt" = "Cerca un luogo...";
 "LocationsView.navTitle" = "Luoghi";
 "LocationsView.favorites" = "Preferiti";
+"LocationsView.noFavTitle" = "Nessun luogo salvato";
+"LocationsView.noFavMessage" = "Qui visualizzerai i tuoi luoghi salvati.";
 
 
 

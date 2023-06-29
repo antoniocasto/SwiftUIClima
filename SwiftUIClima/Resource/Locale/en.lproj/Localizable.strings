@@ -55,3 +55,5 @@
 "LocationsView.searchPrompt" = "Search for a location...";
 "LocationsView.navTitle" = "Locations";
 "LocationsView.favorites" = "Favorites";
+"LocationsView.noFavTitle" = "No location saved";
+"LocationsView.noFavMessage" = "You will visualize your saved locations here.";
