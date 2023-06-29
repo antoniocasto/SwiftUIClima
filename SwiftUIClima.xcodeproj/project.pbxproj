@@ -69,6 +69,7 @@
 		B0DF7D2E2A3326B900821A43 /* EnvironmentVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DF7D2D2A3326B900821A43 /* EnvironmentVariable.swift */; };
 		B0DF7D312A33337700821A43 /* SystemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DF7D302A33337700821A43 /* SystemSettings.swift */; };
 		B0E470702A4D7029002E4C50 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E4706F2A4D7029002E4C50 /* SearchBar.swift */; };
+		B0E470722A4D988E002E4C50 /* HapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E470712A4D988E002E4C50 /* HapticEngine.swift */; };
 		B0FCEBC02A39B86F00AACDAA /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FCEBBF2A39B86F00AACDAA /* StringExtension.swift */; };
 		B0FCEBC22A39BA2300AACDAA /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FCEBC12A39BA2300AACDAA /* DateExtension.swift */; };
 /* End PBXBuildFile section */
@@ -139,6 +140,7 @@
 		B0DF7D2D2A3326B900821A43 /* EnvironmentVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariable.swift; sourceTree = "<group>"; };
 		B0DF7D302A33337700821A43 /* SystemSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSettings.swift; sourceTree = "<group>"; };
 		B0E4706F2A4D7029002E4C50 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
+		B0E470712A4D988E002E4C50 /* HapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEngine.swift; sourceTree = "<group>"; };
 		B0FCEBBF2A39B86F00AACDAA /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B0FCEBC12A39BA2300AACDAA /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -414,6 +416,7 @@
 			isa = PBXGroup;
 			children = (
 				B0DF7D302A33337700821A43 /* SystemSettings.swift */,
+				B0E470712A4D988E002E4C50 /* HapticEngine.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -540,6 +543,7 @@
 				B02278CD2A38732600145CE7 /* WeatherDetailGridView.swift in Sources */,
 				B067F2812A4AD6FE001C1715 /* SearchResultLabelView.swift in Sources */,
 				B0DF7D252A33098600821A43 /* WeatherData.swift in Sources */,
+				B0E470722A4D988E002E4C50 /* HapticEngine.swift in Sources */,
 				B067F27F2A4AC4F7001C1715 /* AddressResult.swift in Sources */,
 				B067F27D2A4ABFA2001C1715 /* LocationsViewModel.swift in Sources */,
 				B0FCEBC22A39BA2300AACDAA /* DateExtension.swift in Sources */,

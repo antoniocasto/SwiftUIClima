@@ -140,6 +140,9 @@ struct WeatherDetailView: View {
             } else {
                 viewModel.removeLocationFromFavorites()
             }
+            
+            HapticEngine.triggerHaptic()
+            
         } label: {
             Image(systemName: viewModel.isFavorite ? "heart.fill" : "heart")
                 .foregroundColor(.white)

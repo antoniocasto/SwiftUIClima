@@ -52,7 +52,11 @@ final class WeatherViewModel: ObservableObject {
     @Published var isFavorite = false
     
     // Bottom Sheet
-    @Published var bottomSheetScaleFactor: BottomSheetScaleFactor = .large
+    @Published var bottomSheetScaleFactor: BottomSheetScaleFactor = .large {
+        didSet {
+            HapticEngine.triggerHaptic()
+        }
+    }
     
     init(coordinates: CLLocationCoordinate2D? = nil) {
         
