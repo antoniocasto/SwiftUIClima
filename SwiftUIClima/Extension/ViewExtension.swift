@@ -50,9 +50,16 @@ extension View {
     }
     
     
-    /// This methods rounds selected corner of the View by the specified radius value.
+    /// This method rounds selected corner of the View by the specified radius value.
     func cornerRadius(_ radius: Int, corners: UIRectCorner) -> some View {
         clipShape(RoundedCorner(cornerRadius: radius, corners: corners))
     }
+    
+    #if canImport(UIKit)
+    /// This method closes the keyboard on iOS based systems.
+    func hideKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+    #endif
     
 }

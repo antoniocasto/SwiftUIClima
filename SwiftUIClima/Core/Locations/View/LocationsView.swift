@@ -25,28 +25,35 @@ struct LocationsView: View {
     
     var body: some View {
         NavigationStack {
-            ZStack {
-                List {
-                    ForEach(viewModel.results, id: \.hashValue) { result in
-                        NavigationLink(value: result) {
-                            SearchResultLabelView(title: result.name, subtitle: result.country)
+            VStack {
+                
+                SearchBar(searchText: $viewModel.searchText, searchActive: $viewModel.searchActive)
+                    .padding(.horizontal)
+                    .padding(.top)
+                
+                ZStack {
+                    List {
+                        ForEach(viewModel.results, id: \.hashValue) { result in
+                            NavigationLink(value: result) {
+                                SearchResultLabelView(title: result.name, subtitle: result.country)
+                            }
                         }
+                        
+                        
+                        Section(!viewModel.locations.isEmpty ? Self.favorites : "") {
+                            // Favorite locations
+                            favoriteLocations
+                        }
+                        .listRowInsets(EdgeInsets())
+                        .listRowBackground(Color.clear)
+                        
                     }
                     
-                    
-                    Section(!viewModel.locations.isEmpty ? Self.favorites : "") {
-                        // Favorite locations
-                        favoriteLocations
+                    if viewModel.locations.isEmpty {
+                        MessageView(title: Self.noFavTitle, description: Self.noFavMessage, systemIcon: "heart.slash")
                     }
-                    .listRowInsets(EdgeInsets())
-                    .listRowBackground(Color.clear)
                     
                 }
-                
-                if viewModel.locations.isEmpty {
-                    MessageView(title: Self.noFavTitle, description: Self.noFavMessage, systemIcon: "heart.slash")
-                }
-                
             }
             .background(gradient)
             .scrollContentBackground(.hidden)
@@ -54,7 +61,6 @@ struct LocationsView: View {
             .navigationDestination(for: AddressResult.self) { result in
                 WeatherView(location: CLLocationCoordinate2D(latitude: result.lat, longitude: result.lon))
             }
-            .searchable(text: $viewModel.searchText, prompt: Self.searchPrompt)
             .onChange(of: viewModel.searchText) { newSearch in
                 Task {
                     await viewModel.fetchCityNames()

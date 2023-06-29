@@ -52,8 +52,11 @@
 "OfflineAlertView.offlineMessage" = "Enable your internet connection if it's disabled.";
 
 /* LocationsView */
-"LocationsView.searchPrompt" = "Search for a location...";
 "LocationsView.navTitle" = "Locations";
 "LocationsView.favorites" = "Favorites";
 "LocationsView.noFavTitle" = "No location saved";
 "LocationsView.noFavMessage" = "You will visualize your saved locations here.";
+
+/* SearchBar */
+"SearchBar.searchPrompt" = "Search for a place...";
+"SearchBar.cancelButtonText" = "Cancel";

@@ -15,6 +15,7 @@ final class LocationsViewModel: NSObject, ObservableObject {
     
     // Results
     @Published private(set) var results = [AddressResult]()
+    @Published var searchActive = false
     // Search input text
     @Published var searchText = "" {
         didSet {

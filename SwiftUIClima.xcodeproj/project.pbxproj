@@ -68,6 +68,7 @@
 		B0DF7D292A331E2000821A43 /* WeatherDataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DF7D282A331E2000821A43 /* WeatherDataService.swift */; };
 		B0DF7D2E2A3326B900821A43 /* EnvironmentVariable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DF7D2D2A3326B900821A43 /* EnvironmentVariable.swift */; };
 		B0DF7D312A33337700821A43 /* SystemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DF7D302A33337700821A43 /* SystemSettings.swift */; };
+		B0E470702A4D7029002E4C50 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E4706F2A4D7029002E4C50 /* SearchBar.swift */; };
 		B0FCEBC02A39B86F00AACDAA /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FCEBBF2A39B86F00AACDAA /* StringExtension.swift */; };
 		B0FCEBC22A39BA2300AACDAA /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FCEBC12A39BA2300AACDAA /* DateExtension.swift */; };
 /* End PBXBuildFile section */
@@ -137,6 +138,7 @@
 		B0DF7D2B2A3323CB00821A43 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		B0DF7D2D2A3326B900821A43 /* EnvironmentVariable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentVariable.swift; sourceTree = "<group>"; };
 		B0DF7D302A33337700821A43 /* SystemSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSettings.swift; sourceTree = "<group>"; };
+		B0E4706F2A4D7029002E4C50 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		B0FCEBBF2A39B86F00AACDAA /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B0FCEBC12A39BA2300AACDAA /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -168,6 +170,7 @@
 				B0511A872A4C16C00026CFA7 /* FavoriteRowPlaceholderView.swift */,
 				B087B1872A46E21100A89EAE /* TemperatureContextMenuLabelView.swift */,
 				B067F2802A4AD6FE001C1715 /* SearchResultLabelView.swift */,
+				B0E4706F2A4D7029002E4C50 /* SearchBar.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				B0360DD72A3DD5750060846F /* WeatherDetailLargeView.swift in Sources */,
 				B0290FAC2A4B197C004846B5 /* Location+CoreDataProperties.swift in Sources */,
 				B02278C92A38667900145CE7 /* CardView.swift in Sources */,
+				B0E470702A4D7029002E4C50 /* SearchBar.swift in Sources */,
 				B0D6AE0D2A2F68C300660195 /* AppTheme.swift in Sources */,
 				B0DF7D312A33337700821A43 /* SystemSettings.swift in Sources */,
 				B0D6AE192A2F765400660195 /* WeatherView.swift in Sources */,

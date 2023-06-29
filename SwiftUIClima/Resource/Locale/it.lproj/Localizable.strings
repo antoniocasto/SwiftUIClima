@@ -61,6 +61,10 @@
 "LocationsView.noFavTitle" = "Nessun luogo salvato";
 "LocationsView.noFavMessage" = "Qui visualizzerai i tuoi luoghi salvati.";
 
+/* SearchBar */
+"SearchBar.searchPrompt" = "Cerca un luogo...";
+"SearchBar.cancelButtonText" = "Annulla";
+
 
 
 
