@@ -27,7 +27,6 @@ struct FavoriteRowHolderView: View {
         }
         .frame(maxWidth: .infinity)
         .frame(height: 100)
-        .cornerRadius(20)
         .onAppear {
             Task {
                 if let weather = try? await WeatherDataService.fetchWeatherDataByCoordinate(CLLocationCoordinate2D(latitude: location.lat, longitude: location.lon), locale: appLocale == .system ? SystemSettings.getSystemLocale() : appLocale.rawValue) {

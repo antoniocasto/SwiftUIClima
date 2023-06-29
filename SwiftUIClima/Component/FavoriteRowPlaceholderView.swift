@@ -14,7 +14,7 @@ struct FavoriteRowPlaceholderView: View {
     let animation = Animation.easeInOut(duration: 1).repeatForever(autoreverses: false)
     
     var body: some View {
-        RoundedRectangle(cornerRadius: 20)
+        Rectangle()
             .fill(LinearGradient(gradient: Gradient(colors: [Color.gray.opacity(0.3), Color.gray.opacity(0.6), Color.gray.opacity(0.3)]), startPoint: start, endPoint: end))
             .onAppear {
                 withAnimation(animation) {

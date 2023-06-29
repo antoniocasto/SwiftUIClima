@@ -79,8 +79,6 @@ struct LocationsView: View {
             NavigationLink(value: result) {
                 SearchResultLabelView(title: result.name, subtitle: result.country)
             }
-            .listRowInsets(EdgeInsets())
-            .listRowBackground(Color.clear)
             .padding(.horizontal)
         }
         
@@ -96,15 +94,15 @@ struct LocationsView: View {
                         EmptyView()
                     }
                         .opacity(0)
+                        
                 )
-                .listRowInsets(EdgeInsets())
-                .listRowBackground(Color.clear)
-                .listRowSeparator(.hidden)
-                .cornerRadius(20)
-                .padding(.vertical, 8)
+                
             
             
         }
+        .onDelete(perform: viewModel.deleteFavoriteLocations(indexSet:))
+        .listRowSeparatorTint(Color.white)
+        
     }
     
 }

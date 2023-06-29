@@ -38,7 +38,7 @@ struct SearchResultLabelView: View {
         }
         .padding()
         .background(.gray.opacity(0.3))
-        .cornerRadius(18)
+        .cornerRadius(10)
     }
 }
 

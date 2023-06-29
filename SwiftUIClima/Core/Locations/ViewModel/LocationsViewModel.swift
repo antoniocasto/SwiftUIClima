@@ -27,6 +27,17 @@ final class LocationsViewModel: NSObject, ObservableObject {
     // Error handling
     @Published var cityNamesFetchError = false
     
+    /// Delete favorite locations included in the IndexSet.
+    func deleteFavoriteLocations(indexSet: IndexSet) {
+        
+        for i in indexSet {
+            let removedLocation = locations.remove(at: i)
+            PersistenceManager.shared.container.viewContext.delete(removedLocation)
+            PersistenceManager.shared.save()
+        }
+        
+    }
+    
     /// Fetches favorite locations.
     func fetchFavoriteLocations() {
         
