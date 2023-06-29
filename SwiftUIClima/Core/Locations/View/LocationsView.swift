@@ -70,6 +70,7 @@ struct LocationsView: View {
                         .listRowBackground(Color.clear)
                         
                     }
+                    .scrollDismissesKeyboard(.immediately)
                     
                     if viewModel.locations.isEmpty {
                         MessageView(title: Self.noFavTitle, description: Self.noFavMessage, systemIcon: "heart.slash")
@@ -117,9 +118,6 @@ struct LocationsView: View {
                         .opacity(0)
                         
                 )
-                
-            
-            
         }
         .onDelete(perform: viewModel.deleteFavoriteLocations(indexSet:))
         .listRowSeparatorTint(Color.white)
