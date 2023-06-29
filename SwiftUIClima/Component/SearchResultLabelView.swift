@@ -14,19 +14,31 @@ struct SearchResultLabelView: View {
     let subtitle: String
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 4) {
-            Text(title)
-                .font(.title2)
-                .fontWeight(.semibold)
+        HStack {
+            
             Text(subtitle)
                 .font(.body)
                 .foregroundStyle(.white)
                 .fontWeight(.semibold)
                 .padding(.horizontal, 4)
                 .background(Color.accentColor)
-                .cornerRadius(2)
+                .cornerRadius(6)
+            
+            Text(title)
+                .font(.title2)
+                .fontWeight(.semibold)
+                .foregroundStyle(.white)
+            
+            
+            Spacer()
+            
+            Image(systemName: "magnifyingglass")
+                .foregroundStyle(.white)
+                
         }
-        
+        .padding()
+        .background(.gray.opacity(0.3))
+        .cornerRadius(18)
     }
 }
 

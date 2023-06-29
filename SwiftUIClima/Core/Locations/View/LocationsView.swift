@@ -27,18 +27,19 @@ struct LocationsView: View {
         NavigationStack {
             VStack {
                 
-                SearchBar(searchText: $viewModel.searchText, searchActive: $viewModel.searchActive)
-                    .padding(.horizontal)
-                    .padding(.top)
+                VStack {
+                    SearchBar(searchText: $viewModel.searchText, searchActive: $viewModel.searchActive)
+                        .padding(.horizontal)
+                        .padding(.top)
+                    
+                    if !viewModel.results.isEmpty {
+                            // Search Results
+                            searchResults
+                    }
+                }
                 
                 ZStack {
                     List {
-                        ForEach(viewModel.results, id: \.hashValue) { result in
-                            NavigationLink(value: result) {
-                                SearchResultLabelView(title: result.name, subtitle: result.country)
-                            }
-                        }
-                        
                         
                         Section(!viewModel.locations.isEmpty ? Self.favorites : "") {
                             // Favorite locations
@@ -71,6 +72,19 @@ struct LocationsView: View {
             }
         }
         
+    }
+    
+    var searchResults: some View {
+        ForEach(viewModel.results, id: \.hashValue) { result in
+            NavigationLink(value: result) {
+                SearchResultLabelView(title: result.name, subtitle: result.country)
+            }
+            .listRowInsets(EdgeInsets())
+            .listRowBackground(Color.clear)
+            .padding(.horizontal)
+        }
+        
+
     }
     
     var favoriteLocations: some View {
