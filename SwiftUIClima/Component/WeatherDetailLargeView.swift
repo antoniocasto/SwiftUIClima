@@ -22,7 +22,7 @@ struct WeatherDetailLargeView: View {
     var body: some View {
         VStack {
             
-            let dayNight = weatherData.sys.dayNight
+            let dayNight = weatherData.dayNight
             
             Spacer()
             

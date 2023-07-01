@@ -22,7 +22,7 @@ struct WeatherDetailSmallView: View {
     var body: some View {
         Group {
             
-            let dayNight = weatherData.sys.dayNight
+            let dayNight = weatherData.dayNight
             
             HStack(spacing: 12) {
                 

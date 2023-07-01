@@ -17,6 +17,20 @@ struct WeatherData: Decodable {
     let wind: Wind
     let sys: Sys
     let name: String
+    let timezone: TimeInterval
+    
+    var sunrise24H: String {
+        Date.convertToLocalTime(utcTimeInSeconds: sys.sunrise, timezoneInSeconds: timezone).getHourOfTheDay24HFormat()
+    }
+    
+    var sunset24H: String {
+        Date.convertToLocalTime(utcTimeInSeconds: sys.sunset, timezoneInSeconds: timezone).getHourOfTheDay24HFormat()
+    }
+    
+    // Day or night
+    var dayNight: Date.DayNight {
+        return Date.checkDateNight(sunrise: Date.convertToLocalTime(utcTimeInSeconds: sys.sunrise, timezoneInSeconds: timezone), sunset: Date.convertToLocalTime(utcTimeInSeconds: sys.sunset, timezoneInSeconds: timezone), timezone: timezone)
+    }
     
     struct Coordinates: Decodable {
         let lon: Double
@@ -103,19 +117,6 @@ struct WeatherData: Decodable {
         
         // Sunset hour in UNIX UTC
         let sunset: TimeInterval
-        
-        // Day or night
-        var dayNight: Date.DayNight {
-            return Date.checkDateNight(sunrise: Date(timeIntervalSince1970: sunrise), sunset: Date(timeIntervalSince1970: sunset))
-        }
-        
-        var sunrise24H: String {
-            Date(timeIntervalSince1970: sunrise).getHourOfTheDay24HFormat()
-        }
-        
-        var sunset24H: String {
-            Date(timeIntervalSince1970: sunset).getHourOfTheDay24HFormat()
-        }
         
     }
     
