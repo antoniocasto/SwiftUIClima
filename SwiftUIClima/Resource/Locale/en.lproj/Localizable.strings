@@ -25,7 +25,7 @@
 "AppSpeed.milesHourSpeed" = "miles/hour";
 
 /* AppLength */
-"AppLenght.metreLength" = "metre";
+"AppLenght.kilometersLenght" = "kilometers";
 "AppLenght.milesLength" = "miles";
 
 /* ContentView */
@@ -74,6 +74,7 @@
 "SettingsView.unitMeasuresHeader" = "Unit measures";
 "SettingsView.temperaturePicker" = "Temperature";
 "SettingsView.speedPicker" = "Speed";
+"SettingsView.lengthPicker" = "Length";
 "SettingsView.themeHeader" = "Appearance";
 "SettingsView.themePicker" = "Theme";
 "SettingsView.localeHeader" = "Locale";

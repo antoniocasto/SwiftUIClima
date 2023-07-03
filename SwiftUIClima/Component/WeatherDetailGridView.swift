@@ -13,6 +13,8 @@ struct WeatherDetailGridView: View {
     
     @AppStorage(AppSpeed.preferenceKey) private var speedUnit: AppSpeed = .metreSec
     
+    @AppStorage(AppLength.preferenceKey) private var lengthUnit: AppLength = .kilometers
+    
     let weatherData: WeatherData
     
     var columns: [GridItem] = [.init(.flexible(), spacing: 16), .init(.flexible(), spacing: 16)]
@@ -25,7 +27,7 @@ struct WeatherDetailGridView: View {
             CardView(title: WeatherDetailGridView.wind, systemIcon: "wind", value: weatherData.wind.speed.formatSpeedWith(unit: .metersPerSecond, useFractionDigits: false, convertTo: speedUnit == .milesHour ? .milesPerHour : nil))
             CardView(title: WeatherDetailGridView.feelsLike, systemIcon: "thermometer.sun", value: "\(weatherData.main.feelsLike.formatTemperatureWith(unit: .celsius, useFractionDigits: false, convertTo: temperatureUnit == .fahrenheit ? .fahrenheit : nil))")
             CardView(title: WeatherDetailGridView.humidity, systemIcon: "humidity", value: weatherData.main.humidity.formatted(.percent))
-            CardView(title: WeatherDetailGridView.visibility, systemIcon: "eye.fill", value: (Double(weatherData.visibility)).formatLenghtWith(unit: .meters, convertTo: .kilometers))
+            CardView(title: WeatherDetailGridView.visibility, systemIcon: "eye.fill", value: (Double(weatherData.visibility)).formatLenghtWith(unit: .meters, useFractionDigits: false, convertTo: lengthUnit == .kilometers ? .kilometers : .miles))
         }
         
     }

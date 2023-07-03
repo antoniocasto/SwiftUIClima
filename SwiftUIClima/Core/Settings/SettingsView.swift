@@ -13,6 +13,7 @@ struct SettingsView: View {
     
     @AppStorage(AppTemperature.preferenceKey) private var temperatureUnit: AppTemperature = .celsius
     @AppStorage(AppSpeed.preferenceKey) private var speedUnit: AppSpeed = .metreSec
+    @AppStorage(AppLength.preferenceKey) private var lengthUnit: AppLength = .kilometers
     @AppStorage(AppLocale.preferenceKey) private var appLocale: AppLocale = .system
     @AppStorage(AppTheme.preferenceKey) private var appTheme: AppTheme = .system
         
@@ -77,6 +78,14 @@ struct SettingsView: View {
                 }
             }
             
+            // Length
+            Picker(Self.lengthPicker, selection: $lengthUnit) {
+                ForEach(AppLength.allCases, id: \.hashValue) { length in
+                    Text(length.lengthName)
+                        .tag(length)
+                }
+            }
+            
         } header: {
             Label(Self.unitMeasuresHeader, systemImage: "ruler")
         }
@@ -120,6 +129,7 @@ extension SettingsView {
     static let unitMeasuresHeader = LocalizedStringKey("SettingsView.unitMeasuresHeader")
     static let temperaturePicker = LocalizedStringKey("SettingsView.temperaturePicker")
     static let speedPicker = LocalizedStringKey("SettingsView.speedPicker")
+    static let lengthPicker = LocalizedStringKey("SettingsView.lengthPicker")
     static let themeHeader = LocalizedStringKey("SettingsView.themeHeader")
     static let themePicker = LocalizedStringKey("SettingsView.themePicker")
     static let localeHeader = LocalizedStringKey("SettingsView.localeHeader")

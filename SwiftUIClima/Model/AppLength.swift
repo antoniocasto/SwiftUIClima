@@ -10,7 +10,7 @@ import SwiftUI
 /// Enum used to select the app lenght unit measure.
 enum AppLength: Int, CaseIterable, Hashable {
     
-    case metre
+    case kilometers
     case miles
     
     // Used for UserDefaults
@@ -19,8 +19,8 @@ enum AppLength: Int, CaseIterable, Hashable {
     // Length full name
     var lengthName: LocalizedStringKey {
         switch self {
-        case .metre:
-            return Self.metreLength
+        case .kilometers:
+            return Self.kilometersLength
         case .miles:
             return Self.milesLength
         }
@@ -29,6 +29,6 @@ enum AppLength: Int, CaseIterable, Hashable {
 }
 
 extension AppLength {
-    static private let metreLength = LocalizedStringKey("AppLenght.metreLength")
+    static private let kilometersLength = LocalizedStringKey("AppLenght.kilometersLenght")
     static private let milesLength = LocalizedStringKey("AppLenght.milesLength")
 }
