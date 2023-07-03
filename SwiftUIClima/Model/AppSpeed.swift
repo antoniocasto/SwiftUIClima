@@ -29,6 +29,6 @@ enum AppSpeed: Int, CaseIterable, Hashable {
 }
 
 extension AppSpeed {
-    static let metreSecSpeed = LocalizedStringKey("AppSpeed.metreSecSpeed")
-    static let milesHourSpeed = LocalizedStringKey("AppSpeed.milesHourSpeed")
+    static private let metreSecSpeed = LocalizedStringKey("AppSpeed.metreSecSpeed")
+    static private let milesHourSpeed = LocalizedStringKey("AppSpeed.milesHourSpeed")
 }

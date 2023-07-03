@@ -69,6 +69,7 @@
 "SettingsView.settings" = "Settings";
 "SettingsView.unitMeasuresHeader" = "Unit measures";
 "SettingsView.temperaturePicker" = "Temperature";
+"SettingsView.speedPicker" = "Speed";
 "SettingsView.themeHeader" = "Appearance";
 "SettingsView.themePicker" = "Theme";
 "SettingsView.localeHeader" = "Locale";

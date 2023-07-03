@@ -11,6 +11,8 @@ struct WeatherDetailGridView: View {
     
     @AppStorage(AppTemperature.preferenceKey) private var temperatureUnit: AppTemperature = .celsius
     
+    @AppStorage(AppSpeed.preferenceKey) private var speedUnit: AppSpeed = .metreSec
+    
     let weatherData: WeatherData
     
     var columns: [GridItem] = [.init(.flexible(), spacing: 16), .init(.flexible(), spacing: 16)]
@@ -20,7 +22,7 @@ struct WeatherDetailGridView: View {
         LazyVGrid(columns: columns, spacing: 16) {
             CardView(title: WeatherDetailGridView.sunrise, systemIcon: "sunrise", value: weatherData.sunrise24H)
             CardView(title: WeatherDetailGridView.sunset, systemIcon: "sunset", value: weatherData.sunset24H)
-            CardView(title: WeatherDetailGridView.wind, systemIcon: "wind", value: weatherData.wind.speed.formatSpeedWith(unit: .metersPerSecond, useFractionDigits: false))
+            CardView(title: WeatherDetailGridView.wind, systemIcon: "wind", value: weatherData.wind.speed.formatSpeedWith(unit: .metersPerSecond, useFractionDigits: false, convertTo: speedUnit == .milesHour ? .milesPerHour : nil))
             CardView(title: WeatherDetailGridView.feelsLike, systemIcon: "thermometer.sun", value: "\(weatherData.main.feelsLike.formatTemperatureWith(unit: .celsius, useFractionDigits: false, convertTo: temperatureUnit == .fahrenheit ? .fahrenheit : nil))")
             CardView(title: WeatherDetailGridView.humidity, systemIcon: "humidity", value: weatherData.main.humidity.formatted(.percent))
             CardView(title: WeatherDetailGridView.visibility, systemIcon: "eye.fill", value: (Double(weatherData.visibility)).formatLenghtWith(unit: .meters, convertTo: .kilometers))

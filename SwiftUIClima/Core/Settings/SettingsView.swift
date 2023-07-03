@@ -9,11 +9,12 @@ import SwiftUI
 
 struct SettingsView: View {
     
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme) private var colorScheme
     
-    @AppStorage(AppTemperature.preferenceKey) var temperatureUnit: AppTemperature = .celsius
-    @AppStorage(AppLocale.preferenceKey) var appLocale: AppLocale = .system
-    @AppStorage(AppTheme.preferenceKey) var appTheme: AppTheme = .system
+    @AppStorage(AppTemperature.preferenceKey) private var temperatureUnit: AppTemperature = .celsius
+    @AppStorage(AppSpeed.preferenceKey) private var speedUnit: AppSpeed = .metreSec
+    @AppStorage(AppLocale.preferenceKey) private var appLocale: AppLocale = .system
+    @AppStorage(AppTheme.preferenceKey) private var appTheme: AppTheme = .system
         
     var body: some View {
         
@@ -68,6 +69,14 @@ struct SettingsView: View {
                 }
             }
             
+            // Speed
+            Picker(Self.speedPicker, selection: $speedUnit) {
+                ForEach(AppSpeed.allCases, id: \.hashValue) { speed in
+                    Text(speed.speedName)
+                        .tag(speed)
+                }
+            }
+            
         } header: {
             Label(Self.unitMeasuresHeader, systemImage: "ruler")
         }
@@ -110,6 +119,7 @@ extension SettingsView {
     static let settings = LocalizedStringKey("SettingsView.settings")
     static let unitMeasuresHeader = LocalizedStringKey("SettingsView.unitMeasuresHeader")
     static let temperaturePicker = LocalizedStringKey("SettingsView.temperaturePicker")
+    static let speedPicker = LocalizedStringKey("SettingsView.speedPicker")
     static let themeHeader = LocalizedStringKey("SettingsView.themeHeader")
     static let themePicker = LocalizedStringKey("SettingsView.themePicker")
     static let localeHeader = LocalizedStringKey("SettingsView.localeHeader")
