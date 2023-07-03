@@ -23,14 +23,18 @@ struct SettingsView: View {
             ZStack(alignment: .bottom) {
                 Form {
                     
-                    // Unit measures
-                    unitMeasuresSection
-                    
-                    // Theme section
-                    themeSection
-                    
-                    // Locale section
-                    localeSection
+                    Group {
+                        // Unit measures
+                        unitMeasuresSection
+                        
+                        // Theme section
+                        themeSection
+                        
+                        // Locale section
+                        localeSection
+                    }
+                    .listRowBackground(colorScheme == .dark ? Color.colorOnDarkGradient : Color.colorOnLightGradient)
+                    .foregroundColor(.white)
                     
                 }
                 
@@ -69,6 +73,7 @@ struct SettingsView: View {
                         .tag(temp)
                 }
             }
+
             
             // Speed
             Picker(Self.speedPicker, selection: $speedUnit) {
