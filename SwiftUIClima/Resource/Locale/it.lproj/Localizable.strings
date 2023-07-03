@@ -65,6 +65,15 @@
 "SearchBar.searchPrompt" = "Cerca un luogo...";
 "SearchBar.cancelButtonText" = "Annulla";
 
+/* SettingsView */
+"SettingsView.settings" = "Impostazioni";
+"SettingsView.unitMeasuresHeader" = "Unità di misura";
+"SettingsView.temperaturePicker" = "Temperatura";
+"SettingsView.themeHeader" = "Aspetto";
+"SettingsView.themePicker" = "Tema";
+"SettingsView.localeHeader" = "Lingua";
+"SettingsView.localePicker" = "Lingua dell'App";
+
 
 
 

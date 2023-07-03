@@ -14,15 +14,6 @@ struct LocationsView: View {
     
     @StateObject private var viewModel = LocationsViewModel()
     
-    // Used gradient
-    var gradient: LinearGradient {
-        if colorScheme == .dark {
-            return Color.darkGradient
-        } else {
-            return Color.lightGradient
-        }
-    }
-    
     var body: some View {
         
         if !viewModel.isConnected {
@@ -122,6 +113,15 @@ struct LocationsView: View {
         .onDelete(perform: viewModel.deleteFavoriteLocations(indexSet:))
         .listRowSeparatorTint(Color.white)
         
+    }
+    
+    // Used gradient
+    var gradient: LinearGradient {
+        if colorScheme == .dark {
+            return Color.darkGradient
+        } else {
+            return Color.lightGradient
+        }
     }
     
 }

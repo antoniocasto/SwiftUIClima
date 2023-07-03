@@ -23,7 +23,7 @@ extension Color {
         startPoint: .top,
         endPoint: .bottom
     )
-    static let colorOnDarkGradient = Color.gray.opacity(0.3)
+    static let colorOnDarkGradient = Color.gray.opacity(0.4)
     
     
     /// Initializer acceptiong an hex number for color and alpha for transparency.

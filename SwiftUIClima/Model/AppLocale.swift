@@ -8,7 +8,7 @@
 import SwiftUI
 
 /// Enum used to select the app language.
-enum AppLocale: String, CaseIterable {
+enum AppLocale: String, CaseIterable, Hashable {
     
     case en = "en"
     case it = "it"

@@ -60,3 +60,12 @@
 /* SearchBar */
 "SearchBar.searchPrompt" = "Search for a place...";
 "SearchBar.cancelButtonText" = "Cancel";
+
+/* SettingsView */
+"SettingsView.settings" = "Settings";
+"SettingsView.unitMeasuresHeader" = "Unit measures";
+"SettingsView.temperaturePicker" = "Temperature";
+"SettingsView.themeHeader" = "Appearance";
+"SettingsView.themePicker" = "Theme";
+"SettingsView.localeHeader" = "Locale";
+"SettingsView.localePicker" = "App language";
