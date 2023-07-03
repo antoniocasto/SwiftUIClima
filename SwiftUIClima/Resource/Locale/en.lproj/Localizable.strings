@@ -20,6 +20,10 @@
 "AppTemperature.celsiusTemp" = "Celsius";
 "AppTemperature.fahrenheitTemp" = "Fahrenheit";
 
+/* AppSpeed */
+"AppSpeed.metreSecSpeed" = "metre/sec";
+"AppSpeed.milesHourSpeed" = "miles/hour";
+
 /* ContentView */
 "ContentView.locations" = "Locations";
 "ContentView.weather" = "Weather";

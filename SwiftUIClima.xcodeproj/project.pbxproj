@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B005A60E2A52C60A0010B34C /* AppSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005A60D2A52C60A0010B34C /* AppSpeed.swift */; };
 		B00782A12A27D11F0037246D /* AppLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00782A02A27D11F0037246D /* AppLocale.swift */; };
 		B02278C72A38565400145CE7 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02278C62A38565400145CE7 /* ColorExtension.swift */; };
 		B02278C92A38667900145CE7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02278C82A38667900145CE7 /* CardView.swift */; };
@@ -75,6 +76,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B005A60D2A52C60A0010B34C /* AppSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSpeed.swift; sourceTree = "<group>"; };
 		B00782A02A27D11F0037246D /* AppLocale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocale.swift; sourceTree = "<group>"; };
 		B02278C62A38565400145CE7 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		B02278C82A38667900145CE7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 				B00782A02A27D11F0037246D /* AppLocale.swift */,
 				B0D6AE0C2A2F68C300660195 /* AppTheme.swift */,
 				B087B1852A46DCB300A89EAE /* AppTemperature.swift */,
+				B005A60D2A52C60A0010B34C /* AppSpeed.swift */,
 				B0DF7D242A33098600821A43 /* WeatherData.swift */,
 				B067F27E2A4AC4F7001C1715 /* AddressResult.swift */,
 			);
@@ -555,6 +558,7 @@
 				B0E470702A4D7029002E4C50 /* SearchBar.swift in Sources */,
 				B0D6AE0D2A2F68C300660195 /* AppTheme.swift in Sources */,
 				B0DF7D312A33337700821A43 /* SystemSettings.swift in Sources */,
+				B005A60E2A52C60A0010B34C /* AppSpeed.swift in Sources */,
 				B0D6AE192A2F765400660195 /* WeatherView.swift in Sources */,
 				B0B0A9112A32115C00D72775 /* LocationManager.swift in Sources */,
 				B0FCEBC02A39B86F00AACDAA /* StringExtension.swift in Sources */,
