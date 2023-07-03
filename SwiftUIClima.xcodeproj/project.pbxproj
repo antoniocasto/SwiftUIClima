@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B005A60E2A52C60A0010B34C /* AppSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005A60D2A52C60A0010B34C /* AppSpeed.swift */; };
+		B005A6102A52CD5C0010B34C /* AppLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005A60F2A52CD5C0010B34C /* AppLength.swift */; };
 		B00782A12A27D11F0037246D /* AppLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00782A02A27D11F0037246D /* AppLocale.swift */; };
 		B02278C72A38565400145CE7 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02278C62A38565400145CE7 /* ColorExtension.swift */; };
 		B02278C92A38667900145CE7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02278C82A38667900145CE7 /* CardView.swift */; };
@@ -77,6 +78,7 @@
 
 /* Begin PBXFileReference section */
 		B005A60D2A52C60A0010B34C /* AppSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSpeed.swift; sourceTree = "<group>"; };
+		B005A60F2A52CD5C0010B34C /* AppLength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLength.swift; sourceTree = "<group>"; };
 		B00782A02A27D11F0037246D /* AppLocale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocale.swift; sourceTree = "<group>"; };
 		B02278C62A38565400145CE7 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		B02278C82A38667900145CE7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -230,6 +232,7 @@
 			children = (
 				B0290FA52A4B17E5004846B5 /* CoreData */,
 				B00782A02A27D11F0037246D /* AppLocale.swift */,
+				B005A60F2A52CD5C0010B34C /* AppLength.swift */,
 				B0D6AE0C2A2F68C300660195 /* AppTheme.swift */,
 				B087B1852A46DCB300A89EAE /* AppTemperature.swift */,
 				B005A60D2A52C60A0010B34C /* AppSpeed.swift */,
@@ -553,6 +556,7 @@
 				B0360DD52A3D9F5D0060846F /* BottomSheetView.swift in Sources */,
 				B0BE37002A3705CA00F84D1B /* MessageView.swift in Sources */,
 				B0360DD72A3DD5750060846F /* WeatherDetailLargeView.swift in Sources */,
+				B005A6102A52CD5C0010B34C /* AppLength.swift in Sources */,
 				B0290FAC2A4B197C004846B5 /* Location+CoreDataProperties.swift in Sources */,
 				B02278C92A38667900145CE7 /* CardView.swift in Sources */,
 				B0E470702A4D7029002E4C50 /* SearchBar.swift in Sources */,

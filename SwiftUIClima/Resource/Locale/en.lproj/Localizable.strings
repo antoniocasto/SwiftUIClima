@@ -24,6 +24,10 @@
 "AppSpeed.metreSecSpeed" = "metre/sec";
 "AppSpeed.milesHourSpeed" = "miles/hour";
 
+/* AppLength */
+"AppLenght.metreLength" = "metre";
+"AppLenght.milesLength" = "miles";
+
 /* ContentView */
 "ContentView.locations" = "Locations";
 "ContentView.weather" = "Weather";
