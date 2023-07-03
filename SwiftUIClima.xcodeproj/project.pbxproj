@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B005A60E2A52C60A0010B34C /* AppSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005A60D2A52C60A0010B34C /* AppSpeed.swift */; };
 		B005A6102A52CD5C0010B34C /* AppLength.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005A60F2A52CD5C0010B34C /* AppLength.swift */; };
+		B005A6132A52E3910010B34C /* DeveloperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005A6122A52E3910010B34C /* DeveloperView.swift */; };
+		B005A6152A52E3F60010B34C /* LinkLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B005A6142A52E3F60010B34C /* LinkLabelView.swift */; };
 		B00782A12A27D11F0037246D /* AppLocale.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00782A02A27D11F0037246D /* AppLocale.swift */; };
 		B02278C72A38565400145CE7 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02278C62A38565400145CE7 /* ColorExtension.swift */; };
 		B02278C92A38667900145CE7 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02278C82A38667900145CE7 /* CardView.swift */; };
@@ -79,6 +81,8 @@
 /* Begin PBXFileReference section */
 		B005A60D2A52C60A0010B34C /* AppSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSpeed.swift; sourceTree = "<group>"; };
 		B005A60F2A52CD5C0010B34C /* AppLength.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLength.swift; sourceTree = "<group>"; };
+		B005A6122A52E3910010B34C /* DeveloperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperView.swift; sourceTree = "<group>"; };
+		B005A6142A52E3F60010B34C /* LinkLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkLabelView.swift; sourceTree = "<group>"; };
 		B00782A02A27D11F0037246D /* AppLocale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLocale.swift; sourceTree = "<group>"; };
 		B02278C62A38565400145CE7 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		B02278C82A38667900145CE7 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -161,6 +165,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B005A6112A52E3840010B34C /* Developer */ = {
+			isa = PBXGroup;
+			children = (
+				B005A6122A52E3910010B34C /* DeveloperView.swift */,
+			);
+			path = Developer;
+			sourceTree = "<group>";
+		};
 		B00782A22A27D4D80037246D /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -177,6 +189,7 @@
 				B087B1872A46E21100A89EAE /* TemperatureContextMenuLabelView.swift */,
 				B067F2802A4AD6FE001C1715 /* SearchResultLabelView.swift */,
 				B0E4706F2A4D7029002E4C50 /* SearchBar.swift */,
+				B005A6142A52E3F60010B34C /* LinkLabelView.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -211,6 +224,7 @@
 		B03475F52A27B6160030286B /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B005A6112A52E3840010B34C /* Developer */,
 				B0D6AE112A2F739000660195 /* Locations */,
 				B03475F62A27B61F0030286B /* Root */,
 				B0D6AE132A2F73A500660195 /* Settings */,
@@ -535,6 +549,7 @@
 				B0DF7D292A331E2000821A43 /* WeatherDataService.swift in Sources */,
 				B0511A882A4C16C00026CFA7 /* FavoriteRowPlaceholderView.swift in Sources */,
 				B087B1882A46E21100A89EAE /* TemperatureContextMenuLabelView.swift in Sources */,
+				B005A6132A52E3910010B34C /* DeveloperView.swift in Sources */,
 				B0360DD32A3D95F90060846F /* OfflineAlertView.swift in Sources */,
 				B0BE37062A3723BA00F84D1B /* WeatherDetailView.swift in Sources */,
 				B076B3592A27AD7D00FAB35C /* ContentView.swift in Sources */,
@@ -551,6 +566,7 @@
 				B0DF7D252A33098600821A43 /* WeatherData.swift in Sources */,
 				B0E470722A4D988E002E4C50 /* HapticEngine.swift in Sources */,
 				B067F27F2A4AC4F7001C1715 /* AddressResult.swift in Sources */,
+				B005A6152A52E3F60010B34C /* LinkLabelView.swift in Sources */,
 				B067F27D2A4ABFA2001C1715 /* LocationsViewModel.swift in Sources */,
 				B0FCEBC22A39BA2300AACDAA /* DateExtension.swift in Sources */,
 				B0360DD52A3D9F5D0060846F /* BottomSheetView.swift in Sources */,
