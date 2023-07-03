@@ -83,6 +83,7 @@
 "SettingsView.themePicker" = "Tema";
 "SettingsView.localeHeader" = "Lingua";
 "SettingsView.localePicker" = "Lingua dell'App";
+"SettingsView.developer" = "Sviluppatore";
 
 
 

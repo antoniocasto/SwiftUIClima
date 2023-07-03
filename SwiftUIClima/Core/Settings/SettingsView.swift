@@ -32,6 +32,10 @@ struct SettingsView: View {
                         
                         // Locale section
                         localeSection
+                                        
+                        // Developer section
+                        developerSection
+                        
                     }
                     .listRowBackground(colorScheme == .dark ? Color.colorOnDarkGradient : Color.colorOnLightGradient)
                     .foregroundColor(.white)
@@ -121,6 +125,14 @@ struct SettingsView: View {
             Label(Self.localeHeader, systemImage: "globe")
         }
     }
+    
+    var developerSection: some View {
+        NavigationLink(destination: DeveloperView()
+            .navigationBarBackButtonHidden(true)
+        ){
+            Text(Self.developer)
+        }
+    }
 }
 
 struct SettingsView_Previews: PreviewProvider {
@@ -139,4 +151,5 @@ extension SettingsView {
     static let themePicker = LocalizedStringKey("SettingsView.themePicker")
     static let localeHeader = LocalizedStringKey("SettingsView.localeHeader")
     static let localePicker = LocalizedStringKey("SettingsView.localePicker")
+    static let developer = LocalizedStringKey("SettingsView.developer")
 }

@@ -11,11 +11,11 @@ struct DeveloperView: View {
     
     @Environment(\.colorScheme) var colorScheme
     
+    @Environment(\.dismiss) var dismiss
+    
     let linkedInLink = "https://linkedin.com/in/antonio-casto-547a411a1"
     let githubLink = "https://github.com/antoniocasto"
-    
-    @State private var animation = false
-    
+        
     var body: some View {
         
         ZStack {
@@ -48,11 +48,18 @@ struct DeveloperView: View {
             
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .animation(.easeInOut(duration: 5).repeatForever(autoreverses: true), value: animation)
-        .onAppear {
-            animation.toggle()
-        }
         .background(gradient)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundColor(.white)
+                        .fontWeight(.semibold)
+                }
+            }
+        }
         
     }
     
@@ -66,7 +73,6 @@ struct DeveloperView: View {
                 Circle()
                     .stroke(lineWidth: 3)
                     .foregroundStyle(.linearGradient(colors: [.accentColor, .colorOnLightGradient], startPoint: .topLeading, endPoint: .bottomTrailing))
-                    .rotationEffect(.degrees(animation ? 180 : 0))
             }
             .shadow(color: .accentColor, radius: 8, x: 0, y: 0)
     }
