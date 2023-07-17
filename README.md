@@ -37,8 +37,7 @@ The UI shows the name of the place where you are, the temperature, and a descrip
 At the bottom you will find a bottom sheet: swipe up to drag it up and get more details about the weather conditions such as sunrise and sunset times, wind speed, perceived temperature, humidity percentage, and visibility.
 
 - **Settings** tab: 
-Nelle impostazioni troverai una sezione per modificare le unità di misura relative a temperatura, velcoità e distanza.
-Puoi anche modificare il tema e la lingua utilizzata dall'app.
+In the settings you will find a section to change the units for temperature, speed and distance. You can also change the theme and language used by the app.
 - - - -
 
 ### Theme customization
