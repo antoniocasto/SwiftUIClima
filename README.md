@@ -4,14 +4,12 @@
 
 ### Preview 
 
-<!--
 <div>
-    <img src="/doc/56.PNG" width="180px"</img>
-    <img src="/doc/54.PNG" width="180px"</img>
-    <img src="/doc/39.PNG" width="180px"</img>
-    <img src="/doc/41.PNG" width="180px"</img>
+    <img src="/doc/1.PNG" width="180px"</img>
+    <img src="/doc/2.PNG" width="180px"</img>
+    <img src="/doc/3.PNG" width="180px"</img>
+    <img src="/doc/4.PNG" width="180px"</img>
 </div>
--->
 
 - - - -
 
