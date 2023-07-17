@@ -10,8 +10,6 @@
     <img src="/doc/3.png" width="180px"</img>
     <img src="/doc/4.png" width="180px"</img>
     <img src="/doc/5.png" width="180px"</img>
-    <img src="/doc/6.png" width="180px"</img>
-    <img src="/doc/7.png" width="180px"</img>
 </div>
 
 - - - -
