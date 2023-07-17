@@ -5,7 +5,7 @@
 ### Preview 
 
 <div>
-    <img src="/doc/1.PNG" width="180px"</img>
+    <img src="/doc/1.png" width="180px"</img>
     <img src="/doc/2.PNG" width="180px"</img>
     <img src="/doc/3.PNG" width="180px"</img>
     <img src="/doc/4.PNG" width="180px"</img>
