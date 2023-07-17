@@ -69,7 +69,7 @@ Before you run the app you must:
 - - - -
 
 ### Credits
-- LottieFiles / lottie.ios: https://github.com/airbnb/lottie-ios.git
+- LottieFiles / lottie-ios: https://github.com/airbnb/lottie-ios.git
 - AckGen: https://github.com/MartinP7r/AckGen
 
 - - - -
