@@ -74,6 +74,10 @@
 		B0DF7D312A33337700821A43 /* SystemSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0DF7D302A33337700821A43 /* SystemSettings.swift */; };
 		B0E470702A4D7029002E4C50 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E4706F2A4D7029002E4C50 /* SearchBar.swift */; };
 		B0E470722A4D988E002E4C50 /* HapticEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E470712A4D988E002E4C50 /* HapticEngine.swift */; };
+		B0F625512A651DBC007809EE /* AckGen in Frameworks */ = {isa = PBXBuildFile; productRef = B0F625502A651DBC007809EE /* AckGen */; };
+		B0F625532A651DBC007809EE /* AckGenUI in Frameworks */ = {isa = PBXBuildFile; productRef = B0F625522A651DBC007809EE /* AckGenUI */; };
+		B0F625552A651DBC007809EE /* ackgen in Frameworks */ = {isa = PBXBuildFile; productRef = B0F625542A651DBC007809EE /* ackgen */; };
+		B0F625592A651F27007809EE /* Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = B0F625582A651F27007809EE /* Acknowledgements.plist */; };
 		B0FCEBC02A39B86F00AACDAA /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FCEBBF2A39B86F00AACDAA /* StringExtension.swift */; };
 		B0FCEBC22A39BA2300AACDAA /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0FCEBC12A39BA2300AACDAA /* DateExtension.swift */; };
 /* End PBXBuildFile section */
@@ -149,6 +153,7 @@
 		B0DF7D302A33337700821A43 /* SystemSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemSettings.swift; sourceTree = "<group>"; };
 		B0E4706F2A4D7029002E4C50 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		B0E470712A4D988E002E4C50 /* HapticEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticEngine.swift; sourceTree = "<group>"; };
+		B0F625582A651F27007809EE /* Acknowledgements.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Acknowledgements.plist; sourceTree = SOURCE_ROOT; };
 		B0FCEBBF2A39B86F00AACDAA /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		B0FCEBC12A39BA2300AACDAA /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -159,6 +164,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B05822A42A2F449300C9F7B1 /* Lottie in Frameworks */,
+				B0F625512A651DBC007809EE /* AckGen in Frameworks */,
+				B0F625532A651DBC007809EE /* AckGenUI in Frameworks */,
+				B0F625552A651DBC007809EE /* ackgen in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +333,7 @@
 		B076B3552A27AD7D00FAB35C /* SwiftUIClima */ = {
 			isa = PBXGroup;
 			children = (
+				B0F625582A651F27007809EE /* Acknowledgements.plist */,
 				B03475F42A27B60B0030286B /* App */,
 				B00782A22A27D4D80037246D /* Component */,
 				B0DF7D2C2A33269800821A43 /* Config */,
@@ -451,6 +460,7 @@
 				B076B34F2A27AD7D00FAB35C /* Sources */,
 				B076B3502A27AD7D00FAB35C /* Frameworks */,
 				B076B3512A27AD7D00FAB35C /* Resources */,
+				B0F625562A651E14007809EE /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -459,6 +469,9 @@
 			name = SwiftUIClima;
 			packageProductDependencies = (
 				B05822A32A2F449300C9F7B1 /* Lottie */,
+				B0F625502A651DBC007809EE /* AckGen */,
+				B0F625522A651DBC007809EE /* AckGenUI */,
+				B0F625542A651DBC007809EE /* ackgen */,
 			);
 			productName = SwiftUIClima;
 			productReference = B076B3532A27AD7D00FAB35C /* SwiftUIClima.app */;
@@ -490,6 +503,7 @@
 			mainGroup = B076B34A2A27AD7D00FAB35C;
 			packageReferences = (
 				B05822A22A2F449300C9F7B1 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				B0F6254F2A651DBC007809EE /* XCRemoteSwiftPackageReference "AckGen" */,
 			);
 			productRefGroup = B076B3542A27AD7D00FAB35C /* Products */;
 			projectDirPath = "";
@@ -505,6 +519,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0F625592A651F27007809EE /* Acknowledgements.plist in Resources */,
 				B05822BC2A2F45BD00C9F7B1 /* night-rain.json in Resources */,
 				B05822C62A2F45BD00C9F7B1 /* day-mist.json in Resources */,
 				B05822C22A2F45BD00C9F7B1 /* night-mist.json in Resources */,
@@ -531,6 +546,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B0F625562A651E14007809EE /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "DIR=$PROJECT_TEMP_DIR/../../../SourcePackages/checkouts/AckGen\nif [ -d \"$DIR\" ]; then\n  cd $DIR\n  SDKROOT=(xcrun --sdk macosx --show-sdk-path)\n  swift run ackgen\nelse\n  echo \"warning: AckGen not found. Please install the package via SPM (https://github.com/MartinP7r/AckGen#installation)\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B076B34F2A27AD7D00FAB35C /* Sources */ = {
@@ -826,6 +862,14 @@
 				minimumVersion = 4.0.0;
 			};
 		};
+		B0F6254F2A651DBC007809EE /* XCRemoteSwiftPackageReference "AckGen" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MartinP7r/AckGen";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.6;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -833,6 +877,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = B05822A22A2F449300C9F7B1 /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		B0F625502A651DBC007809EE /* AckGen */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B0F6254F2A651DBC007809EE /* XCRemoteSwiftPackageReference "AckGen" */;
+			productName = AckGen;
+		};
+		B0F625522A651DBC007809EE /* AckGenUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B0F6254F2A651DBC007809EE /* XCRemoteSwiftPackageReference "AckGen" */;
+			productName = AckGenUI;
+		};
+		B0F625542A651DBC007809EE /* ackgen */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B0F6254F2A651DBC007809EE /* XCRemoteSwiftPackageReference "AckGen" */;
+			productName = ackgen;
 		};
 /* End XCSwiftPackageProductDependency section */
 

@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "ackgen",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MartinP7r/AckGen",
+      "state" : {
+        "revision" : "c28170c4b709bd69a17255c0c904158a3cce922b",
+        "version" : "0.1.6"
+      }
+    },
+    {
       "identity" : "lottie-ios",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/airbnb/lottie-ios",

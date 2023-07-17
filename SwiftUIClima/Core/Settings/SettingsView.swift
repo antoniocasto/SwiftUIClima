@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AckGenUI
 
 struct SettingsView: View {
     
@@ -35,6 +36,9 @@ struct SettingsView: View {
                                         
                         // Developer section
                         developerSection
+                        
+                        // License section
+                        licenseSection
                         
                     }
                     .listRowBackground(colorScheme == .dark ? Color.colorOnDarkGradient : Color.colorOnLightGradient)
@@ -133,6 +137,16 @@ struct SettingsView: View {
             Text(Self.developer)
         }
     }
+    
+    var licenseSection: some View {
+        NavigationLink {
+            AcknowledgementsList()
+        } label: {
+            Text(Self.license)
+        }
+
+    }
+    
 }
 
 struct SettingsView_Previews: PreviewProvider {
@@ -152,4 +166,5 @@ extension SettingsView {
     static let localeHeader = LocalizedStringKey("SettingsView.localeHeader")
     static let localePicker = LocalizedStringKey("SettingsView.localePicker")
     static let developer = LocalizedStringKey("SettingsView.developer")
+    static let license = LocalizedStringKey("SettingsView.license")
 }
