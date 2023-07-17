@@ -55,6 +55,7 @@ Before you run the app you must:
 - Add a key value pair to this config file "API_KEY=< your api key >" (without ""). < your api key > must be replaced with an API KEY generated on https://openweathermap.org website.
 
 - Build & Run the app.
+- - - -
 
 ### Features of interest (developer perspective)
 - MVVM used for architectural pattern
